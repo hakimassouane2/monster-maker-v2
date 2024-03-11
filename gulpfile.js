@@ -112,16 +112,6 @@ gulp.task(
   )
 );
 
-/**
- * Push build to gh-pages
- */
-gulp.task(
-  "deploy",
-  gulp.series("build", function () {
-    return gulp.src("./dist/**/*").pipe(deploy());
-  })
-);
-
 /*
  * Watch folders for any changes.
  */
@@ -155,3 +145,19 @@ gulp.task(
   )
 );
 gulp.task("build-and-watch", gulp.series("build", "watch"));
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task(
+  "deploy",
+  gulp.series("build", function () {
+    const token = process.env.GITHUB_TOKEN;
+    return gulp.src("./dist/**/*").pipe(
+      deploy({
+        remoteUrl: `https://${token}@github.com/hakimassouane2/monster-maker-v2.git`,
+        branch: "gh-pages",
+      })
+    );
+  })
+);

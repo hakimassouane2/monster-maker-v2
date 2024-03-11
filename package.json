@@ -1,6 +1,10 @@
 {
-  "name": "giffyglyphs_monster_maker",
+  "name": "monster-maker-v2",
   "version": "2.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakimassouane2/monster-maker-v2.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
@@ -24,5 +28,7 @@
     "dev": "gulp build-and-watch",
     "deploy": "gulp deploy"
   },
-  "dependencies": {}
+  "dependencies": {
+    "handlebars": "^4.7.8"
+  }
 }
