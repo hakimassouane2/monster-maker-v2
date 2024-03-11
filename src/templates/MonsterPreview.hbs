@@ -24,7 +24,7 @@
 					</div>
 					{{#if display.quickstart}}
 						<div class="monster-quickstart">
-							<p>Level {{monster.description.level}} {{fmtCapitalise monster.description.role}}<br/> {{fmtCapitalise monster.description.rank}} <span class="solo-only">vs {{monster.description.players}} </span>({{fmtLocaleString monster.challenge.xp}} XP)</p>
+							<p>Niveau {{monster.description.level}} {{fmtFormatRole monster.description.role}}<br/> {{fmtFormatRank monster.description.rank}} <span class="solo-only">vs {{monster.description.players}} </span>({{fmtLocaleString monster.challenge.xp}} XP)</p>
 						</div>
 					{{/if}}
 				</div>
@@ -35,7 +35,7 @@
 					{{#if display.armorClass}}
 						<li class="monster-ac">
 							<p>
-								<span class="label">Armor Class</span>
+								<span class="label">Défense</span>
 								<span>
 									{{#if monster.ac.value}}{{monster.ac.value}} {{/if}}
 									{{#if monster.ac.type}}({{monster.ac.type}}){{/if}}
@@ -46,7 +46,7 @@
 					{{#if display.hitPoints}}
 						<li class="monster-hp">
 							<p>
-								<span class="label">Hit Points</span>
+								<span class="label">Points de vie</span>
 								<span>
 									{{#if monster.hp.average}}{{monster.hp.average}} {{/if}}
 									{{#if monster.hp.roll}}({{monster.hp.roll}}){{/if}}
@@ -57,7 +57,7 @@
 					{{#if display.speeds}}
 						<li class="monster-speed">
 							<p>
-								<span class="label">Speed</span>
+								<span class="label">Vitesse</span>
 								<span>{{{fmtMonsterSpeeds monster.speeds}}}</span>
 							</p>
 						</li>
@@ -67,7 +67,7 @@
 			<hr/>
 			<div class="monster-abilities">
 				<div class="monster-ability">
-					<span class="label">Str</span>
+					<span class="label">For</span>
 					<span>{{monster.abilities.str.score}} <span class="modifier">({{{fmtModifier monster.abilities.str.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
@@ -83,7 +83,7 @@
 					<span>{{monster.abilities.int.score}} <span class="modifier">({{{fmtModifier monster.abilities.int.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Wis</span>
+					<span class="label">Sag</span>
 					<span>{{monster.abilities.wis.score}} <span class="modifier">({{{fmtModifier monster.abilities.wis.modifier}}})</span></span>
 				</div>
 				<div class="monster-ability">
@@ -97,7 +97,7 @@
 					{{#if display.savingThrows}}
 						<li class="monster-saves">
 							<p>
-								<span class="label">{{#if monster.attack.isActive}}Saves{{/if}}{{#unless monster.attack.isActive}}Saving Throws{{/unless}}</span>
+								<span class="label">{{#if monster.attack.isActive}}Saves{{/if}}{{#unless monster.attack.isActive}}Jets de sauvegarde{{/unless}}</span>
 								<span>
 									{{#if display.quickstart}}
 										{{#if monster.attack.isActive}}
@@ -117,10 +117,10 @@
 					{{#if display.skills}}
 						<li class="monster-skills">
 							<p>
-								<span class="label">Skills</span>
+								<span class="label">Compétences</span>
 								<span>
 									{{#each monster.skills}}
-										{{fmtCapitalise name}} {{fmtModifier modifier}}{{#unless @last}}, {{/unless}}
+										{{fmtFormatSkill name}} {{fmtModifier modifier}}{{#unless @last}}, {{/unless}}
 									{{/each}}
 								</span>
 							</p>
@@ -129,10 +129,10 @@
 					{{#if display.vulnerabilities}}
 						<li class="monster-vulnerabilities">
 							<p>
-								<span class="label">Damage Vulnerabilities</span>
+								<span class="label">Vulnérabilités aux dégâts</span>
 								<span>
 									{{#each monster.vulnerabilities}}
-										{{this}}{{#unless @last}}, {{/unless}}
+										{{fmtFormatDamages this}}{{#unless @last}}, {{/unless}}
 									{{/each}}
 								</span>
 							</p>
@@ -141,10 +141,10 @@
 					{{#if display.resistances}}
 						<li class="monster-resistances">
 							<p>
-								<span class="label">Damage Resistances</span>
+								<span class="label">Résistances aux dégâts</span>
 								<span>
 									{{#each monster.resistances}}
-										{{this}}{{#unless @last}}, {{/unless}}
+										{{fmtFormatDamages this}}{{#unless @last}}, {{/unless}}
 									{{/each}}
 								</span>
 							</p>
@@ -153,10 +153,10 @@
 					{{#if display.immunities}}
 						<li class="monster-immunities">
 							<p>
-								<span class="label">Damage Immunities</span>
+								<span class="label">Immunités aux dégâts</span>
 								<span>
 									{{#each monster.immunities}}
-										{{this}}{{#unless @last}}, {{/unless}}
+										{{fmtFormatDamages this}}{{#unless @last}}, {{/unless}}
 									{{/each}}
 								</span>
 							</p>
@@ -165,10 +165,10 @@
 					{{#if display.conditions}}
 						<li class="monster-conditions">
 							<p>
-								<span class="label">Condition Immunities</span>
+								<span class="label">Immunités aux états</span>
 								<span>
 									{{#each monster.conditions}}
-										{{this}}{{#unless @last}}, {{/unless}}
+										{{fmtFormatConditions this}}{{#unless @last}}, {{/unless}}
 									{{/each}}
 								</span>
 							</p>
@@ -177,7 +177,7 @@
 					{{#if display.senses}}
 						<li class="monster-senses">
 							<p>
-								<span class="label">Senses</span>
+								<span class="label">Sens</span>
 								<span>{{fmtMonsterSenses monster.senses}}</span>
 							</p>
 						</li>
@@ -185,10 +185,10 @@
 					{{#if display.languages}}
 						<li class="monster-languages">
 							<p>
-								<span class="label">Languages</span>
+								<span class="label">Langues</span>
 								<span>
 									{{#each monster.languages}}
-										{{fmtCapitalise this}}{{#unless @last}}, {{/unless}}
+										{{fmtFormatLanguage this}}{{#unless @last}}, {{/unless}}
 									{{/each}}
 								</span>
 							</p>
@@ -197,7 +197,7 @@
 					{{#if display.challenge}}
 						<li class="monster-challenge">
 							<p>
-								<span class="label">Challenge</span>
+								<span class="label">Puissance</span>
 								<span>
 									{{{monster.challenge.rating}}} {{#unless display.quickstart}}({{fmtLocaleString monster.challenge.xp}} XP){{/unless}}
 								</span>
@@ -211,20 +211,20 @@
 				<ul class="quickstart-helpers">
 					<li>
 						<p>
-							<span class="label">Attacks</span>
-							<span>{{#if monster.attack.isActive}}DC {{monster.attack.bonus}} vs AC{{#if monster.attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless monster.attack.isActive}}{{fmtModifier monster.attack.bonus}} to hit{{/unless}}. <i>Hit:</i> {{monster.attack.damage}} damage</span>
+							<span class="label">Attaques</span>
+							<span>{{#if monster.attack.isActive}}DD {{monster.attack.bonus}} vs DEF{{#if monster.attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless monster.attack.isActive}}{{fmtModifier monster.attack.bonus}} au toucher{{/unless}}. <i>Touché:</i> {{ fmtFormatDamages monster.attack.damage}} dégâts</span>
 						</p>
 					</li>
 					<li>
 						<p>
-							<span class="label">Attack DCs</span>
-							<span>Primary DC {{monster.dc.primary}}, Secondary DC {{monster.dc.secondary}}</span>
+							<span class="label">Degrés de Difficulté</span>
+							<span>Principal {{monster.dc.primary}}, secondaire {{monster.dc.secondary}}</span>
 						</p>
 					</li>
 					{{#if monster.attack.isActive}}
 						<li>
 							<p>
-								<span class="label">Active Defence</span>
+								<span class="label">Défense Active</span>
 								<span>{{#if monster.attack.isActiveSmaller}}<i>(Smaller Variant) </i>{{/if}}You don't roll to attack. Instead, your targets roll to defend.</span>
 							</p>
 						</li>
@@ -251,7 +251,7 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.reactions}}
-				<h5>Reactions</h5>
+				<h5>Réactions</h5>
 				<div class="h5-border"></div>
 				{{#each monster.reactions}}
 					<div class="monster-reaction">
@@ -260,15 +260,15 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.paragonActions}}
-				<h5>Paragon Actions</h5>
+				<h5>Actions Paragon</h5>
 				<div class="h5-border"></div>
-				<p class="paragon-actions">You can take {{monster.paragonActions}} paragon action(s), choosing to either move or perform one action. Only one paragon action can be used at a time and only at the end of another creature's turn. You regain spent paragon actions at the start of your turn.</p>
+				<p class="paragon-actions">Vous pouvez effectuer {{monster.paragonActions}} une action(s) parangon, en choisissant soit de vous déplacer, soit d'effectuer une action. Une seule action de parangon peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions parangon dépensées au début de votre tour.</p>
 			{{/if}}
 			{{#if display.legendaryActions}}
-				<h5>Legendary Actions</h5>
+				<h5>Actions Légendaires</h5>
 				<div class="h5-border"></div>
 				{{#if display.legendaryActionsPerRound}}
-					<p class="legendary-per-round">You can take {{monster.legendaryActionsPerRound}} legendary action(s), choosing from the options below. Only one legendary action option can be used at a time and only at the end of another creature's turn. You regain spent legendary actions at the start of your turn.</p>
+					<p class="legendary-per-round">Vous pouvez effectuer {{monster.legendaryActionsPerRound}} action(s) légendaire(s), en choisissant parmi les options ci-dessous. Une seule option d'action légendaire peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions légendaires dépensées au début de votre tour.</p>
 				{{/if}}
 				{{#each monster.legendaryActions}}
 					<div class="monster-legendary-action">
@@ -277,10 +277,10 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.lairActions}}
-				<h5>Lair Actions</h5>
+				<h5>Actions de repaire</h5>
 				<div class="h5-border"></div>
 				{{#if display.lairActionsInitiative}}
-					<p class="lair-initiative">On initiative count {{monster.lairActionsInitiative}} (losing initiative ties), you may take a lair action to trigger one of the following effects. You can't use the same effect two rounds in a row.</p>
+					<p class="lair-initiative">Sur le compte d'initiative {{monster.lairActionsInitiative}}, vous pouvez entreprendre une action de repaire pour déclencher l'un des effets suivants. Vous ne pouvez pas utiliser le même effet deux rounds de suite.</p>
 				{{/if}}
 				{{#each monster.lairActions}}
 					<div class="monster-lair-action">
@@ -297,7 +297,6 @@
 					{{/each}}
 				</div>
 			{{/if}}
-			<p class="monster-footer">Made with Giffyglyph's Monster Maker</p>
 		</div>
 		<div class="monster-contents-footer"></div>
 	</div>
@@ -305,7 +304,7 @@
 <div>
 	{{#if display.downloadPng}}
 		<button type="button" class="btn btn-sm btn-primary btn-png">
-			<span class="fas fa-camera"></span> Download as PNG
+			<span class="fas fa-camera"></span> Télécharger en PNG
 		</button>
 	{{/if}}
 	<button type="button" class="btn btn-sm btn-primary btn-columns icon-only icon-border">
