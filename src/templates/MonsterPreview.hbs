@@ -212,7 +212,7 @@
 					<li>
 						<p>
 							<span class="label">Attaques</span>
-							<span>{{#if monster.attack.isActive}}DD {{monster.attack.bonus}} vs DEF{{#if monster.attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless monster.attack.isActive}}{{fmtModifier monster.attack.bonus}} au toucher{{/unless}}. <i>Touché:</i> {{ fmtFormatDamages monster.attack.damage}} dégâts</span>
+							<span>{{#if monster.attack.isActive}}DD {{monster.attack.bonus}} vs DEF{{#if monster.attack.isActiveSmaller}} − 10{{/if}}{{/if}}{{#unless monster.attack.isActive}}{{fmtModifier monster.attack.bonus}} au toucher{{/unless}}. <i>Touché:</i> {{ monster.attack.damage}} dégâts</span>
 						</p>
 					</li>
 					<li>
