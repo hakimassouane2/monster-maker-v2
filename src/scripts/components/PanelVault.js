@@ -2,7 +2,6 @@ import Blueprint from "../classes/blueprint.js";
 import SRD_MONSTERS from "../consts/srd_monsters.js";
 import Files from "../files.js";
 import Frankenstein from "../frankenstein.js";
-import Helpers from "../helpers.js";
 import Router from "../router.js";
 import Storage from "../storage.js";
 import Tracking from "../tracking.js";
@@ -26,7 +25,7 @@ class PanelVault extends Component {
         x.monster = Frankenstein.createVaultMonster(x.blueprint);
       } catch (error) {
         console.error(
-          "Couldn't create monster profile from blueprint, reverting to default"
+          "Impossible de créer un profil de monstre du blueprint, retour à la valeur par défaut"
         );
         x.monster = Frankenstein.createVaultMonster(new Blueprint());
       }
@@ -43,15 +42,21 @@ class PanelVault extends Component {
       dom: '<"top"lf><"content"rt><"bottom"ip>',
       lengthMenu: [
         [10, 25, 50, 100, -1],
-        ["Show 10", "Show 25", "Show 50", "Show 100", "Show all"],
+        [
+          "Afficher 10",
+          "Afficher 25",
+          "Afficher 50",
+          "Afficher 100",
+          "Tout Afficher",
+        ],
       ],
       stateSave: true,
       language: {
-        sInfo: "Showing _START_ to _END_ of _TOTAL_ monsters",
-        sInfoEmpty: "Showing 0 to 0 of 0 monsters",
-        sInfoFiltered: "(filtered from _MAX_ total monsters)",
+        sInfo: "Affichage de _START_ à _END_ sur _TOTAL_ monstres",
+        sInfoEmpty: "Affichage de 0 à 0 de 0 monstres",
+        sInfoFiltered: "(filtré à partir de _MAX_ monstres)",
         sLengthMenu: "_MENU_",
-        sZeroRecords: "No monsters found",
+        sZeroRecords: "Aucun monstre n'a été trouvé",
         search: "",
         paginate: {
           previous: "&lt;",
@@ -64,34 +69,23 @@ class PanelVault extends Component {
         {
           data: "monster.description.name",
           className: "col-name",
-          title: "Name",
+          title: "Nom",
         },
-        {
-          data: "monster.tags",
-          className: "col-description",
-          title: "Description",
-        },
-        {
-          data: "monster.description.role",
-          className: "col-role-rank",
-          title: "Role & Rank",
-        },
-        { data: "monster.ac.value", className: "col-ac-hp", title: "AC & HP" },
         {
           data: "monster.description.level",
           className: "col-level",
-          title: "Lvl",
+          title: "Niv.",
           type: "num",
         },
         {
           data: "monster.description.role",
           className: "col-role",
-          title: "Role",
+          title: "Rôle",
         },
         {
           data: "monster.description.rank",
           className: "col-rank",
-          title: "Rank",
+          title: "Rang",
         },
         {
           data: "monster.challenge.rating",
@@ -102,51 +96,19 @@ class PanelVault extends Component {
         {
           data: "monster.ac.value",
           className: "col-ac",
-          title: "AC",
+          title: "DEF",
           type: "num",
         },
         {
           data: "monster.hp.average",
           className: "col-hp",
-          title: "HP",
+          title: "PV",
           type: "num",
         },
       ],
       columnDefs: [
         {
-          targets: [2],
-          render: function (data, type, row) {
-            return Helpers.formatMonsterDescription(
-              row.monster.description.size,
-              row.monster.description.type,
-              row.monster.tags,
-              row.monster.description.alignment
-            );
-          },
-        },
-        {
-          targets: [3],
-          render: function (data, type, row) {
-            return row.monster.method == "manual"
-              ? "—"
-              : row.monster.description.role +
-                  " " +
-                  row.monster.description.rank +
-                  (row.monster.description.rank == "solo"
-                    ? " vs " + row.monster.description.players
-                    : "");
-          },
-        },
-        {
-          targets: [4],
-          render: function (data, type, row) {
-            return (
-              row.monster.ac.value + " AC, " + row.monster.hp.average + " HP"
-            );
-          },
-        },
-        {
-          targets: [5, 9, 10],
+          targets: [5, 6],
           render: function (data, type, row) {
             switch (data) {
               case "—":
@@ -157,7 +119,7 @@ class PanelVault extends Component {
           },
         },
         {
-          targets: [7],
+          targets: [3],
           render: function (data, type, row) {
             return data == "solo"
               ? data + " vs " + row.monster.description.players
@@ -165,7 +127,7 @@ class PanelVault extends Component {
           },
         },
         {
-          targets: [8],
+          targets: [7],
           render: function (data, type, row) {
             switch (data) {
               case "—":
@@ -188,7 +150,7 @@ class PanelVault extends Component {
       deferRender: true,
       createdRow: function (row, data, dataIndex) {
         $(row).html(
-          "<td colspan='11'>" +
+          "<td colspan='8'>" +
             Handlebars.templates["PanelVaultRow"](data) +
             "</td>"
         );
@@ -265,7 +227,7 @@ class PanelVault extends Component {
             x.monster = Frankenstein.createVaultMonster(x.blueprint);
           } catch (error) {
             console.error(
-              "Couldn't create monster profile from blueprint, reverting to default"
+              "Impossible de créer un profil de monstre à partir du blueprint, retour à la valeur par défaut"
             );
             x.monster = Frankenstein.createVaultMonster(new Blueprint());
           }
@@ -290,7 +252,7 @@ class PanelVault extends Component {
                 x.monster = Frankenstein.createVaultMonster(x.blueprint);
               } catch (error) {
                 console.error(
-                  "Couldn't create monster profile from blueprint, reverting to default"
+                  "Impossible de créer un profil de monstre à partir du blueprint, retour à la valeur par défaut"
                 );
                 x.monster = Frankenstein.createVaultMonster(new Blueprint());
               }
@@ -306,7 +268,7 @@ class PanelVault extends Component {
                 x.monster = Frankenstein.createVaultMonster(x.blueprint);
               } catch (error) {
                 console.error(
-                  "Couldn't create monster profile from blueprint, reverting to default"
+                  "Impossible de créer un profil de monstre à partir du blueprint, retour à la valeur par défaut"
                 );
                 x.monster = Frankenstein.createVaultMonster(new Blueprint());
               }

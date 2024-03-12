@@ -5,6 +5,14 @@
 		<input type="text" class="form-control" data-name="name" {{{setValue name}}}>
 	</div>
 	<div class="form-group">
+		<label>Rareté</label>
+		<select class="form-control" data-name="rarity">
+			<option value="common">Commun</option>
+			<option value="uncommon">Peu commun</option>
+			<option value="rare" >Rare</option>
+		</select>
+	</div>
+	<div class="form-group">
 		<label>Détail</label>
 		<textarea type="text" class="form-control auto-expand" data-name="detail">{{{fmtTextarea detail}}}</textarea>
 	</div>
