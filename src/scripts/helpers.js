@@ -29,6 +29,10 @@ const Helpers = (function () {
       return options.inverse(this);
     });
 
+    Handlebars.registerHelper("divide", function (a, b) {
+      return a / b;
+    });
+
     Handlebars.registerHelper("setValue", function (value) {
       return value == undefined || value == null
         ? ""
@@ -469,18 +473,18 @@ const Helpers = (function () {
       undead: "Mort-vivant",
     };
 
-    let alignmentMap = {
-      "chaotic good": "Chaotique Bon",
-      "chaotic neutral": "Chaotique Neutre",
-      "chaotic evil": "Chaotique Mauvais",
-      "neutral good": "Neutre Bon",
-      neutral: "Neutre",
-      "neutral evil": "Neutre Mauvais",
-      "lawful good": "Loyal Bon",
-      "lawful neutral": "Loyal Neutre",
-      "lawful evil": "Loyal Mauvais",
-      unaligned: "Non aligné",
-    };
+    // let alignmentMap = {
+    //   "chaotic good": "Chaotique Bon",
+    //   "chaotic neutral": "Chaotique Neutre",
+    //   "chaotic evil": "Chaotique Mauvais",
+    //   "neutral good": "Neutre Bon",
+    //   neutral: "Neutre",
+    //   "neutral evil": "Neutre Mauvais",
+    //   "lawful good": "Loyal Bon",
+    //   "lawful neutral": "Loyal Neutre",
+    //   "lawful evil": "Loyal Mauvais",
+    //   unaligned: "Non aligné",
+    // };
 
     if (type != null) {
       if (output.length != 0) {
@@ -504,12 +508,12 @@ const Helpers = (function () {
       });
       output += ")";
     }
-    if (alignment != null) {
-      if (output.length != 0) {
-        output += ", ";
-      }
-      output += alignmentMap[alignment];
-    }
+    // if (alignment != null) {
+    //   if (output.length != 0) {
+    //     output += ", ";
+    //   }
+    //   output += alignmentMap[alignment];
+    // }
     return output;
   }
 

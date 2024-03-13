@@ -1,3 +1,4 @@
+{{!-- Beginning of custom theme --}}
 {{#ifCond monster.display.theme "new-giffyglyph"}}
 <div class="monster theme-{{monster.display.theme}} columns-{{monster.display.columns}} {{#if display.quickstart}}quickstart rank-{{monster.description.rank}}{{/if}}">
 	{{#if display.imageBanner}}
@@ -27,74 +28,96 @@
 			{{/if}}
 			{{#if display.quickstart}}
 				<div class="monster-quickstart">
-					<p>Niveau {{monster.description.level}} {{fmtFormatRole monster.description.role}}<br/> {{fmtFormatRank monster.description.rank}} <span class="solo-only">vs {{monster.description.players}} </span>({{fmtLocaleString monster.challenge.xp}} XP)</p>
+					<p><i class="fa-solid fa-crown"></i> {{fmtFormatRank monster.description.rank}} <span class="solo-only">vs {{monster.description.players}} </span> Niveau {{monster.description.level}}, {{fmtFormatRole monster.description.role}}</p>
 				</div>
-			{{/if}}
-			{{#if display.defences}}
-				<hr/>
-				<ul>
-					{{#if display.armorClass}}
-						<li class="monster-ac">
-							<p>
-								<span class="label">Défense</span>
-								<span>
-									{{#if monster.ac.value}}{{monster.ac.value}} {{/if}}
-									{{#if monster.ac.type}}({{monster.ac.type}}){{/if}}
-								</span>
-							</p>
-						</li>
-					{{/if}}
-					{{#if display.hitPoints}}
-						<li class="monster-hp">
-							<p>
-								<span class="label">Points de vie</span>
-								<span>
-									{{#if monster.hp.average}}{{monster.hp.average}} {{/if}}
-									{{#if monster.hp.roll}}({{monster.hp.roll}}){{/if}}
-								</span>
-							</p>
-						</li>
-					{{/if}}
-					{{#if display.speeds}}
-						<li class="monster-speed">
-							<p>
-								<span class="label">Vitesse</span>
-								<span>{{{fmtMonsterSpeeds monster.speeds}}}</span>
-							</p>
-						</li>
-					{{/if}}
-				</ul>
 			{{/if}}
 			<hr/>
 			<div class="monster-abilities">
 				<div class="monster-ability">
-					<span class="label">For</span>
-					<span>{{monster.abilities.str.score}} <span class="modifier">({{{fmtModifier monster.abilities.str.modifier}}})</span></span>
+					<span class="label">For {{monster.abilities.str.score}} </span>
+					<span class="modifier">{{{fmtModifier monster.abilities.str.modifier}}}</span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Dex</span>
-					<span>{{monster.abilities.dex.score}} <span class="modifier">({{{fmtModifier monster.abilities.dex.modifier}}})</span></span>
+					<span class="label">Dex {{monster.abilities.dex.score}}</span>
+					<span class="modifier">{{{fmtModifier monster.abilities.dex.modifier}}}</span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Con</span>
-					<span>{{monster.abilities.con.score}} <span class="modifier">({{{fmtModifier monster.abilities.con.modifier}}})</span></span>
+					<span class="label">Con {{monster.abilities.con.score}}</span>
+					 <span class="modifier">{{{fmtModifier monster.abilities.con.modifier}}}</span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Int</span>
-					<span>{{monster.abilities.int.score}} <span class="modifier">({{{fmtModifier monster.abilities.int.modifier}}})</span></span>
+					<span class="label">Int {{monster.abilities.int.score}}</span>
+					<span class="modifier">{{{fmtModifier monster.abilities.int.modifier}}}</span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Sag</span>
-					<span>{{monster.abilities.wis.score}} <span class="modifier">({{{fmtModifier monster.abilities.wis.modifier}}})</span></span>
+					<span class="label">Sag {{monster.abilities.wis.score}}</span>
+					<span class="modifier">{{{fmtModifier monster.abilities.wis.modifier}}}</span>
 				</div>
 				<div class="monster-ability">
-					<span class="label">Cha</span>
-					<span>{{monster.abilities.cha.score}} <span class="modifier">({{{fmtModifier monster.abilities.cha.modifier}}})</span></span>
+					<span class="label">Cha {{monster.abilities.cha.score}}</span>
+					<span class="modifier">{{{fmtModifier monster.abilities.cha.modifier}}}</span>
 				</div>
 			</div>
+			{{#if display.defences}}
+				<hr/>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-shield-halved"></i> DEF</span>
+					<span> {{#if monster.ac.value}}{{monster.ac.value}} {{/if}} {{#if monster.ac.type}}({{monster.ac.type}}){{/if}}</span>
+					<span class="label"> JDS</span>
+						{{#if display.quickstart}}
+							{{#if monster.attack.isActive}}
+								{{{fmtMonsterSavingThrowsQuickstartActive monster.savingThrows}}}
+							{{/if}}
+							{{#unless monster.attack.isActive}}
+								{{fmtMonsterSavingThrowsQuickstart monster.savingThrows}}
+							{{/unless}}
+						{{/if}}
+						{{#unless display.quickstart}}
+							{{fmtMonsterSavingThrows monster.savingThrows}}
+						{{/unless}}
+				</p>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-heart"></i> PV</span>
+					<span>{{monster.hp.average}}</span>
+					<span class="label">Ensenglanté</span>
+					<span>{{divide monster.hp.average 2}}</span>
+				</p>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-hand-fist"></i> ATK</span>
+					<span>{{fmtModifier monster.attack.bonus}}</span>
+					<span class="label">DD</span>
+					<span>{{monster.dc.primary}} | {{monster.dc.secondary}}</span>
+					<span class="label">DMG</span>
+					<span>{{ monster.attack.damage}}</span>
+				</p>
+				<hr style="background: #831517; border-width: 5px; display: block; margin-left: 0.5em; margin-right: 0.5em; width: auto; margin-top: 0.1em; margin-bottom: 0.1em;"/>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-bolt"></i> Vitesse</span>
+					<span>{{{fmtMonsterSpeeds monster.speeds}}}</span>
+				</p>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences</span>
+					<span>{{#each monster.skills}}{{fmtFormatSkill name}} {{fmtModifier modifier}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+				</p>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-eye"></i> Sens</span>
+					<span>{{fmtMonsterSenses monster.senses}}</span>
+				</p>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-comment"></i> Langues</span>
+					<span>{{#each monster.languages}}{{fmtFormatLanguage this}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+				</p>
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-award"></i> CR</span>
+					<span>
+						{{{monster.challenge.rating}}}
+					</span>
+					{{#unless display.quickstart}}<span class="label">XP</span><span>{{fmtLocaleString monster.challenge.xp}} XP</span>{{/unless}}
+				</p>
+			{{/if}}
 			{{#if display.stats}}
 				<hr/>
-				<ul class="monster-stats">
+				{{!-- <ul class="monster-stats">
 					{{#if display.savingThrows}}
 						<li class="monster-saves">
 							<p>
@@ -205,10 +228,10 @@
 							</p>
 						</li>
 					{{/if}}
-				</ul>
+				</ul> --}}
 			{{/if}}
 			{{#if display.quickstart}}
-				<hr/>
+				{{!-- <hr/>
 				<ul class="quickstart-helpers">
 					<li>
 						<p>
@@ -230,7 +253,7 @@
 							</p>
 						</li>
 					{{/if}}
-				</ul>
+				</ul> --}}
 			{{/if}}
 			<hr/>
 			{{#if display.traits}}
@@ -238,7 +261,7 @@
 				<div class="h5-border"></div>
 				{{#each monster.traits}}
 					<div class="monster-trait">
-						<p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 16px; width: 16px; background-color: #1c922c; border-radius: 50% !important; margin-right: 4px; vertical-align: sub;"><path d="M0 0h512v512H0z" fill="#FFFFFF" fill-opacity="0.01"></path><g class="" transform="translate(7,21)" style=""><path d="M329.8 235.69l62.83-82.71 42.86 32.56-62.83 82.75zm-12.86-9.53l66.81-88-45-34.15-66.81 88zm-27.48-97.78l-19.3 39.57 57-75-42.51-32.3-36.24 47.71zm-20.74-73.24l-46.64-35.43-42 55.31 53.67 26.17zm107 235.52l-139-102.71-9.92.91 4.56 2 62.16 138.43-16.52 2.25-57.68-128.5-40-17.7-4-30.84 39.41 19.42 36.36-3.33 17-34.83-110.9-54.09-80.68 112.51L177.6 346.67l-22.7 145.62H341V372.62l35.29-48.93L387 275.77z" fill="#FFFFFF" fill-opacity="1"></path></g></svg>{{#if name}}<span class="name">{{name}}.</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
+						<p><i class="fa-solid fa-sword" style="background: rgb(28, 146, 44); color: white; padding: 5px; border-radius: 1em; margin-right: 5px;"></i>{{#if name}}<span class="name">{{name}}.</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
 					</div>
 				{{/each}}
 			{{/if}}
@@ -302,6 +325,7 @@
 		<div class="monster-contents-footer"></div>
 	</div>
 </div>
+{{!-- Beginning of other classic themes --}}
 {{else}}
 <div class="monster theme-{{monster.display.theme}} columns-{{monster.display.columns}} {{#if display.quickstart}}quickstart rank-{{monster.description.rank}}{{/if}}">
 	{{#if display.imageBanner}}

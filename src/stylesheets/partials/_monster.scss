@@ -597,6 +597,12 @@
 
     .h5-traits {
       display: block;
+      // margin-left: 0;
+      // margin-right: 0;
+      // padding-left: 0.5em !important;
+      // padding-right: 0.5em !important;
+      // width: 100%;
+      // border-radius: 0;
     }
 
     ul {
@@ -669,7 +675,7 @@
       .monster-header {
         background: rgb(131, 21, 23);
         color: $white;
-        padding: 0.75em 1em 0.5em;
+        padding: 0.75em 1em 0.2em;
         // margin-left: -2px;
         // margin-top: -2px;
         // width: calc(100% + 4px);
@@ -679,21 +685,40 @@
           position: relative;
         }
 
+        p {
+          font-family: "Roboto";
+        }
+
         h4 {
           color: $white;
+          font-family: "Alegreya Sans", sans-serif;
         }
       }
 
+      .monster-quickstart {
+        padding: 0;
+        color: white;
+        background: #5f0709;
+        padding-left: 0.8em;
+        font-family: "Roboto";
+        font-weight: 700;
+        font-size: 1.1em;
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+      }
+
       > * {
-        padding-left: 1em;
-        padding-right: 1em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
       }
     }
 
-    .monster-abilities {
-      // column-gap: 0.25em;
-      // margin-top: 0.5em;
-      margin-bottom: 0;
+    .body-stats {
+      margin-top: 0;
+
+      .label {
+        color: rgb(131, 21, 23);
+      }
     }
 
     .monster-saves {
@@ -731,6 +756,12 @@
       line-height: 1.5;
     }
 
+    .monster-abilities {
+      //column-gap: 0.25em;
+      // margin-top: 0.5em;
+      margin-bottom: 0.3em;
+    }
+
     .monster-ability {
       background: rgb(131, 21, 23);
       color: white;
@@ -740,6 +771,11 @@
       .label {
         color: white;
         background: #5f0709;
+      }
+
+      .modifier {
+        font-weight: 700;
+        font-size: 1.3em;
       }
     }
 
@@ -779,11 +815,11 @@
         padding-bottom: 0;
       }
 
-      hr {
-        &:first-of-type + * {
-          margin-top: 0.5em;
-        }
-      }
+      // hr {
+      //   &:first-of-type + * {
+      //     margin-top: 0.5em;
+      //   }
+      // }
     }
   }
 }
