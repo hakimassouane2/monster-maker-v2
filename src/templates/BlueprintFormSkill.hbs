@@ -3,25 +3,25 @@
 	<div class="form-group">
 		<label>Compétence</label>
 		<select class="form-control custom-toggle" data-name="name">
-			<option value="custom" {{selected name "custom"}}>Custom</option>
 			<option value="acrobatics" {{selectedDefault name "acrobatics"}}>Acrobaties</option>
-			<option value="animal handling" {{selected name "animal handling"}}>Dresage</option>
 			<option value="arcana" {{selected name "arcana"}}>Arcanes</option>
 			<option value="athletics" {{selected name "athletics"}}>Athlétisme</option>
-			<option value="deception" {{selected name "deception"}}>Tromperie</option>
+			<option value="custom" {{selected name "custom"}}>Custom</option>
+			<option value="stealth" {{selected name "stealth"}}>Discrétion</option>
+			<option value="animal handling" {{selected name "animal handling"}}>Dresage</option>
+			<option value="sleight of hand" {{selected name "sleight of hand"}}>Escamotage</option>
 			<option value="history" {{selected name "history"}}>Histoire</option>
-			<option value="insight" {{selected name "insight"}}>Perspicacité</option>
 			<option value="intimidation" {{selected name "intimidation"}}>Intimidation</option>
 			<option value="investigation" {{selected name "investigation"}}>Investigation</option>
 			<option value="medicine" {{selected name "medicine"}}>Médecine</option>
 			<option value="nature" {{selected name "nature"}}>Nature</option>
 			<option value="perception" {{selected name "perception"}}>Perception</option>
 			<option value="performance" {{selected name "performance"}}>Performance</option>
+			<option value="insight" {{selected name "insight"}}>Perspicacité</option>
 			<option value="persuasion" {{selected name "persuasion"}}>Persuasion</option>
 			<option value="religion" {{selected name "religion"}}>Religion</option>
-			<option value="sleight of hand" {{selected name "sleight of hand"}}>Escamotage</option>
-			<option value="stealth" {{selected name "stealth"}}>Discrétion</option>
 			<option value="survival" {{selected name "survival"}}>Survie</option>
+			<option value="deception" {{selected name "deception"}}>Tromperie</option>
 		</select>
 	</div>
 	<div class="form-group custom" {{{customToggle name}}}>
@@ -40,7 +40,7 @@
 		</select>
 	</div>
 	<div class="form-group">
-		<label>Maîtrise</label>
+		<label>Niveau</label>
 		<select class="form-control" data-name="proficiency">
 			<option value="proficient" {{selectedDefault proficiency "proficient"}}>Maîtrise</option>
 			<option value="expertise" {{selected proficiency "expertise"}}>Expertise</option>

@@ -3,23 +3,23 @@
 	<div class="form-group">
 		<label>Condition</label>
 		<select class="form-control custom-toggle" data-name="type">
-			<option value="custom" {{selected type "custom"}}>Custom</option>
+			<option value="grappled" {{selected type "grappled"}}>Agrippé</option>
+			<option value="deafened" {{selected type "deafened"}}>Assourdi</option>
+			<option value="prone" {{selected type "prone"}}>À terre</option>
 			<option value="blinded" {{selectedDefault type "blinded"}}>Aveuglé</option>
 			<option value="charmed" {{selected type "charmed"}}>Charmé</option>
-			<option value="deafened" {{selected type "deafened"}}>Assourdi</option>
+			<option value="custom" {{selected type "custom"}}>Custom</option>
+			<option value="frightened" {{selected type "frightened"}}>Effrayé</option>
+			<option value="restrained" {{selected type "restrained"}}>Entravé</option>
+			<option value="poisoned" {{selected type "poisoned"}}>Empoisonné</option>
+			<option value="stunned" {{selected type "stunned"}}>Étourdi</option>
 			<option value="exhaustion" {{selected type "exhaustion"}}>Épuisement</option>
 			<option value="fatigued" {{selected type "fatigued"}}>Fatigué</option>
-			<option value="frightened" {{selected type "frightened"}}>Effrayé</option>
-			<option value="grappled" {{selected type "grappled"}}>Agrippé</option>
 			<option value="incapacitated" {{selected type "incapacitated"}}>Incapable d'agir</option>
+			<option value="unconscious" {{selected type "unconscious"}}>Inconscient</option>
 			<option value="invisible" {{selected type "invisible"}}>Invisible</option>
 			<option value="paralyzed" {{selected type "paralyzed"}}>Paralysé</option>
 			<option value="petrified" {{selected type "petrified"}}>Pétrifié</option>
-			<option value="poisoned" {{selected type "poisoned"}}>Empoisonné</option>
-			<option value="prone" {{selected type "prone"}}>À terre</option>
-			<option value="restrained" {{selected type "restrained"}}>Entravé</option>
-			<option value="stunned" {{selected type "stunned"}}>Étourdi</option>
-			<option value="unconscious" {{selected type "unconscious"}}>Inconscient</option>
 		</select>
 	</div>
 	<div class="form-group custom" {{{customToggle type}}}>
