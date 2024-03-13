@@ -22,6 +22,13 @@ const Helpers = (function () {
 
     // Helpers used by the blueprint form
 
+    Handlebars.registerHelper("ifCond", function (v1, v2, options) {
+      if (v1 === v2) {
+        return options.fn(this);
+      }
+      return options.inverse(this);
+    });
+
     Handlebars.registerHelper("setValue", function (value) {
       return value == undefined || value == null
         ? ""
