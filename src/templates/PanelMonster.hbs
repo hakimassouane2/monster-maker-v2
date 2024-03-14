@@ -54,6 +54,10 @@
           <button type="button" class="dropdown-item btn-show-gmbinder">
             <span class="fas fa-book-open"></span>Afficher au format GMBinder
           </button>
+          <button type="button" class="dropdown-item btn-show-legendkeeper">
+            <span class="fas fa-book-open"></span>Afficher au format
+            LegendKeeper
+          </button>
           <div class="dropdown-divider"></div>
           <button type="button" class="dropdown-item btn-export-to-json">
             <span class="fas fa-file-export"></span>Sauvegarder en .json
@@ -215,6 +219,33 @@
           <h5 class="modal-title">
             <span class="card-icon fas fa-book-open"></span>
             GMBinder
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            <span class="fas fa-check"></span>
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-legendkeeper" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <span class="card-icon fas fa-book-open"></span>
+            LegendKeeper
           </h5>
           <button
             type="button"

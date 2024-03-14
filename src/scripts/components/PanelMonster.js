@@ -189,6 +189,15 @@ class PanelMonster extends Component {
       }.bind(this)
     );
 
+    // Show the monster in LegendKeeper format
+    $(this.el).on(
+      "click",
+      ".btn-show-legendkeeper",
+      function () {
+        this.showLegendKeeper();
+      }.bind(this)
+    );
+
     // Import monsters into the vault
     $(this.el).on(
       "click",

@@ -196,6 +196,15 @@ class PanelLaboratory extends Component {
       }.bind(this)
     );
 
+    // Show the monster in LegendKeeper format
+    $(this.el).on(
+      "click",
+      ".btn-show-legendkeeper",
+      function () {
+        this.showLegendKeeper();
+      }.bind(this)
+    );
+
     // Import monsters into the vault
     $(this.el).on(
       "click",
@@ -281,6 +290,16 @@ class PanelLaboratory extends Component {
     let file = Exporters.blueprintToGMBinder(blueprint);
     $("#modal-gmbinder .modal-body").html(file);
     $("#modal-gmbinder").modal("show");
+  }
+
+  /**
+   * Exports the monster to the clipboard in LegendKeeper format.
+   */
+  showLegendKeeper() {
+    let blueprint = this.children["blueprint"].data.blueprint;
+    let file = Exporters.blueprintToLegendKeeper(blueprint);
+    $("#modal-legendkeeper .modal-body").html(file);
+    $("#modal-legendkeeper").modal("show");
   }
 }
 
