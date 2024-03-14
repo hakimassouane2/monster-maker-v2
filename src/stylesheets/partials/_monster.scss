@@ -819,6 +819,18 @@
       }
     }
 
+    .monster-image.custom {
+      position: absolute;
+      right: 0.65em;
+      width: 80px;
+      height: 80px;
+      background: #c1a75c;
+      border-radius: 0 0 5em 5em;
+      box-shadow: -1px 7px 14px 4px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: -1px 7px 14px 4px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: -1px 7px 14px 4px rgba(0, 0, 0, 0.3);
+    }
+
     &.columns-2 {
       .monster-contents-body {
         padding-top: 1em;

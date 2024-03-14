@@ -165,13 +165,20 @@
 					</div>
 					<div class="form-group">
 						<label>Image <button type="button" class="btn btn-sm btn-help icon-only" data-toggle="modal" data-target="#modal-blueprint-help-image"><span class="fas fa-question-circle"></span></button></label>
-						<input type="text" class="form-control" name="display.image.url" {{{setValue blueprint.display.image.url}}}>
+						{{!-- <input type="text" class="form-control" name="display.image.url" {{{setValue blueprint.display.image.url}}}> --}}
+						<select class="form-control" name="display.image.type">
+							<option value="bow" {{selected blueprint.display.image.type "bow"}}>Archer</option>
+							<option value="spartan" {{selected blueprint.display.image.type "spartan"}}>Spartiate</option>
+							<option value="test" {{selected blueprint.display.image.type "test"}}>Test</option>
+							<option value="none" {{selected blueprint.display.image.type "none"}}>Aucun</option>
+						</select>
 					</div>
 					<div class="form-group">
 						<label>Position</label>
 						<select class="form-control" name="display.image.position">
 							<option value="banner" {{selected blueprint.display.image.position "banner"}}>Bannière</option>
 							<option value="inline" {{selected blueprint.display.image.position "inline"}}>Inline</option>
+							<option value="custom" {{selected blueprint.display.image.position "custom"}}>Custom</option>
 							<option value="none" {{selected blueprint.display.image.position "none"}}>Aucune</option>
 						</select>
 					</div>

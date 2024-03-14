@@ -25,14 +25,24 @@ class MonsterPreview extends Component {
       "click",
       ".btn-png",
       function () {
+        const scale = 3;
+        const node = document.querySelector(".monster");
+        const style = {
+          transform: "scale(" + scale + ")",
+          transformOrigin: "top left",
+          width: node.offsetWidth + "px",
+          height: node.offsetHeight + "px",
+        };
+        const param = {
+          height: node.offsetHeight * scale,
+          width: node.offsetWidth * scale,
+          quality: 1,
+          style,
+        };
         domtoimage
-          .toPng(document.querySelector(".monster"), {
-            width: this.data.monster.display.columns == 1 ? 400 : 748,
-            bgcolor: null, // equivalent to backgroundColor: null
-          })
+          .toPng(node, param)
           .then(
             function (dataUrl) {
-              console.log(this.data.monster);
               Files.savePng(this.data.monster.getName(), dataUrl);
             }.bind(this)
           )
@@ -60,6 +70,7 @@ class MonsterPreview extends Component {
         monster.getImageUrl() != null && monster.getImagePosition() == "banner",
       imageInline:
         monster.getImageUrl() != null && monster.getImagePosition() == "inline",
+      imageCustom: monster.getImagePosition() == "custom",
       headerTitle: monster.getName() != null,
       headerDescription:
         monster.getSize() != null ||
