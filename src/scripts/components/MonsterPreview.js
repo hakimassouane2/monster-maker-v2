@@ -39,7 +39,6 @@ class MonsterPreview extends Component {
             Files.savePng(this.data.monster.getName(), canvas.toDataURL());
           }.bind(this)
         );
-        // Tracking.sendEvent("monster-preview", "click-png");
       }.bind(this)
     );
 

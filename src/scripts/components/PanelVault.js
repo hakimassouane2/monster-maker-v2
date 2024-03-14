@@ -4,7 +4,6 @@ import Files from "../files.js";
 import Frankenstein from "../frankenstein.js";
 import Router from "../router.js";
 import Storage from "../storage.js";
-import Tracking from "../tracking.js";
 import Component from "./Component.js";
 
 /**
@@ -186,7 +185,6 @@ class PanelVault extends Component {
             this.table.clear().draw();
           }.bind(this)
         );
-        Tracking.sendEvent("vault", "click-empty");
       }.bind(this)
     );
 
@@ -196,7 +194,6 @@ class PanelVault extends Component {
       ".btn-export-to-json",
       function () {
         this.exportVault();
-        Tracking.sendEvent("vault", "click-export-json");
       }.bind(this)
     );
 
@@ -206,7 +203,6 @@ class PanelVault extends Component {
       ".btn-import-from-json",
       function () {
         $("#vault-import-file").click();
-        Tracking.sendEvent("vault", "click-import-json");
       }.bind(this)
     );
 
@@ -235,7 +231,6 @@ class PanelVault extends Component {
         panel.table.clear().rows.add(panel.data.monsters).draw();
         $("#modal-imported-monsters .count").html(SRD_MONSTERS.length);
         $("#modal-imported-monsters").modal("show");
-        Tracking.sendEvent("vault", "click-import-srd");
       }.bind(this)
     );
 
