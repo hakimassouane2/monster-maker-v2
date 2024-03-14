@@ -36,6 +36,18 @@ gulp.task("build-images", function (cb) {
 });
 
 /*
+ * Deploy all relevant fonts to the dist folder.
+ */
+gulp.task("build-fonts", function (cb) {
+  return gulp
+    .src(path.join("src", "webfonts", "**", "*.+(ttf|woff2)"), {
+      base: path.join("src", "webfonts"),
+    })
+    .pipe(using())
+    .pipe(gulp.dest(path.join("dist", "webfonts")));
+});
+
+/*
  * Deploy all relevant stylesheets to the dist folder.
  */
 gulp.task("build-pages", function (cb) {
@@ -124,6 +136,7 @@ gulp.task("watch", function (cb) {
   gulp.watch("src/scripts/**/*.js", gulp.series(["build-scripts"]));
   gulp.watch("src/templates/**/*.hbs", gulp.series(["build-scripts"]));
   gulp.watch("src/stylesheets/**/*.scss", gulp.series(["build-stylesheets"]));
+  gulp.watch("src/webfonts/**/*.+(ttf|woff2)", gulp.series(["build-fonts"]));
 });
 
 /*
@@ -137,7 +150,8 @@ gulp.task(
       "build-images",
       "build-scripts",
       "build-stylesheets",
-      "build-pages"
+      "build-pages",
+      "build-fonts"
     ),
     function (cb) {
       return cb();

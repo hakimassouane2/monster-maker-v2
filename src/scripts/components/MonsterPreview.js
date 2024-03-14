@@ -25,20 +25,20 @@ class MonsterPreview extends Component {
       "click",
       ".btn-png",
       function () {
-        html2canvas(document.querySelector(".monster"), {
-          useCORS: true,
-          allowTaint: false,
-          windowWidth: 1200,
-          backgroundColor: null,
-          onclone: function (clonedDoc) {
-            // For now we comment this out, but we may want to use it later to adjust the font size, the problem is that it overrides the size of the font awesome icons
-            // $(clonedDoc).find(".monster").css("font-size", "25px");
-          },
-        }).then(
-          function (canvas) {
-            Files.savePng(this.data.monster.getName(), canvas.toDataURL());
-          }.bind(this)
-        );
+        domtoimage
+          .toPng(document.querySelector(".monster"), {
+            width: this.data.monster.display.columns == 1 ? 400 : 748,
+            bgcolor: null, // equivalent to backgroundColor: null
+          })
+          .then(
+            function (dataUrl) {
+              console.log(this.data.monster);
+              Files.savePng(this.data.monster.getName(), dataUrl);
+            }.bind(this)
+          )
+          .catch(function (error) {
+            console.error("Error rendering image:", error);
+          });
       }.bind(this)
     );
 

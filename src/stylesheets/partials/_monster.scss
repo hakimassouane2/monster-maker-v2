@@ -597,12 +597,6 @@
 
     .h5-traits {
       display: block;
-      // margin-left: 0;
-      // margin-right: 0;
-      // padding-left: 0.5em !important;
-      // padding-right: 0.5em !important;
-      // width: 100%;
-      // border-radius: 0;
     }
 
     ul {
@@ -705,6 +699,7 @@
         font-size: 1.1em;
         padding-top: 0.2em;
         padding-bottom: 0.2em;
+        margin-bottom: 0.5em;
       }
 
       > * {
@@ -729,6 +724,19 @@
       margin-top: 0.5em !important;
     }
 
+    .trait-icon::before {
+      background: rgb(28, 146, 44);
+      color: white;
+      padding: 0.4em;
+      border-radius: 1em;
+      margin-right: 0.3em;
+      font-size: 0.8em;
+    }
+
+    .name {
+      font-style: normal;
+    }
+
     .h5-border {
       display: none;
     }
@@ -737,23 +745,36 @@
       display: flex;
     }
 
-    h5 {
-      content: "Traits";
+    .section-title {
       background: rgba(88, 24, 13, 0.1);
-      display: block;
-      margin: 0 0.65em 0.3em;
+      border-bottom: 2px solid #831517;
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 0.22fr 1fr;
+      padding-left: 0;
+      padding-right: 0;
+      width: 97%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0.3em;
+    }
+
+    h5 {
+      content: "TRAITS";
       font-weight: bold;
-      color: #9a1515;
-      font-family: "Alegreya Sans SC", sans-serif;
-      display: inline-block;
-      width: calc(100% - 1.3em);
+      color: white;
+      font-family: "Roboto";
+      margin-top: 0 !important;
+      background: #831517;
+      font-size: 0.8em;
+      padding-left: 1.5em;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      clip-path: polygon(0% 0%, 90% 0, 100% 100%, 100% 100%, 0% 100%);
 
       > * {
         font-size: 1.45em;
       }
-      padding: 0 0.5em !important;
-      border-radius: 0.3em;
-      line-height: 1.5;
     }
 
     .monster-abilities {
