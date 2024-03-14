@@ -33,6 +33,10 @@ const Helpers = (function () {
       return a / b;
     });
 
+    Handlebars.registerHelper("divideRoundDown", function (a, b) {
+      return Math.floor(a / b);
+    });
+
     Handlebars.registerHelper("setValue", function (value) {
       return value == undefined || value == null
         ? ""
