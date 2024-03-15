@@ -725,12 +725,37 @@
     }
 
     .trait-icon::before {
-      background: rgb(28, 146, 44);
       color: white;
       padding: 0.4em;
       border-radius: 1em;
       margin-right: 0.3em;
       font-size: 0.8em;
+      // min-width: 22px;
+      // min-height: 22px;
+    }
+
+    .trait-icon.common::before {
+      background: rgb(28, 146, 44);
+    }
+
+    .trait-icon.uncommon::before {
+      background: rgb(178, 148, 3);
+    }
+
+    .trait-icon.rare::before {
+      background: rgb(148, 18, 18);
+    }
+
+    .trait-icon.passive::before {
+      content: "\f111";
+    }
+
+    .trait-icon.melee::before {
+      content: "\f71c";
+    }
+
+    .trait-icon.range::before {
+      content: "\f6b9";
     }
 
     .name {

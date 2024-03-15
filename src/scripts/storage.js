@@ -37,23 +37,31 @@ const Storage = (function () {
     ]);
     blueprint.setTraits([
       {
-        name: "(Assaillant) Assaut Sauvage",
+        name: "Assaut Sauvage",
+        rarity: "common",
+        type: "passive",
         detail:
           "Une fois par tour, ajoutez votre niveau en dégâts supplémentaires à une attaque.",
       },
       {
         name: "Rapide",
+        rarity: "common",
+        type: "passive",
         detail: "Vous pouvez <i>Foncer</i> via votre action bonus.",
       },
     ]);
     blueprint.setActions([
       {
         name: "Découper",
+        rarity: "common",
+        type: "melee",
         detail:
           "_Mêlée:_ [attack] vs DEF. _Touché:_ [damage, d4] dégâts tranchants.",
       },
       {
         name: "Recul",
+        rarity: "common",
+        type: "melee",
         detail:
           "_Mêlée:_ [dc-primary] vs FOR. _Touché:_ la cible est repoussée jusqu'à 2 cases de distance.",
       },

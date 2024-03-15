@@ -154,6 +154,8 @@ class Blueprint {
     this.traits = parseArray(options.traits, function (trait) {
       return {
         name: parseString(trait.name),
+        rarity: parseString(trait.rarity),
+        type: parseString(trait.type),
         detail: parseString(trait.description),
       };
     });
@@ -410,18 +412,24 @@ class Blueprint {
     this.traits = parseArray(options.traits, function (trait) {
       return {
         name: parseString(trait.name),
+        rarity: parseString(trait.rarity),
+        type: parseString(trait.type),
         detail: parseString(trait.detail),
       };
     });
     this.actions = parseArray(options.actions, function (action) {
       return {
         name: parseString(action.name),
+        rarity: parseString(action.rarity),
+        type: parseString(action.type),
         detail: parseString(action.detail),
       };
     });
     this.reactions = parseArray(options.reactions, function (reaction) {
       return {
         name: parseString(reaction.name),
+        rarity: parseString(reaction.rarity),
+        type: parseString(reaction.type),
         detail: parseString(reaction.detail),
       };
     });
@@ -441,6 +449,8 @@ class Blueprint {
       function (legendaryAction) {
         return {
           name: parseString(legendaryAction.name),
+          rarity: parseString(legendaryAction.rarity),
+          type: parseString(legendaryAction.type),
           detail: parseString(legendaryAction.detail),
         };
       }
@@ -449,6 +459,8 @@ class Blueprint {
     this.lairActions = parseArray(options.lairActions, function (lairAction) {
       return {
         name: parseString(lairAction.name),
+        rarity: parseString(lairAction.rarity),
+        type: parseString(lairAction.type),
         detail: parseString(lairAction.detail),
       };
     });

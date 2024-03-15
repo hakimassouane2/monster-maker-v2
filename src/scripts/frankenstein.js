@@ -408,15 +408,19 @@ const Frankenstein = (function () {
         blueprint.getPhase() < blueprint.getPhases()
       ) {
         traits.push({
-          name: "Phase Transition (Transformation)",
+          name: "Transition de phase (Transformation)",
+          rarity: "rare",
+          type: "passive",
           detail:
-            "When reduced to 0 hit points, remove all on-going effects on yourself as you transform and start a new phase transition event.",
+            "Lorsque vous êtes réduit à 0 point de vie, vous supprimez tous les effets en cours sur vous-même lorsque vous vous transformez et commencez un nouvel événement de transition de phase.",
         });
       } else if (blueprint.getPhases() == 1) {
         traits.push({
-          name: "Phase Transition",
+          name: "Transition de phase",
+          rarity: "rare",
+          type: "passive",
           detail:
-            "At 66% and 33% hit points, you may remove all on-going effects on yourself and start a new phase transition event.",
+            "A 66% et 33% de points de vie, vous pouvez supprimer tous les effets en cours sur vous-même et commencer un nouvel événement de transition de phase.",
         });
       }
     }
@@ -424,6 +428,8 @@ const Frankenstein = (function () {
       if (trait.name != null || trait.detail != null) {
         traits.push({
           name: trait.name,
+          rarity: trait.rarity,
+          type: trait.type,
           detail: parseMarkdown(trait.detail, monster),
         });
       }
@@ -436,6 +442,8 @@ const Frankenstein = (function () {
       if (action.name != null || action.detail != null) {
         actions.push({
           name: action.name,
+          rarity: action.rarity,
+          type: action.type,
           detail: parseMarkdown(action.detail, monster),
         });
       }
@@ -448,6 +456,8 @@ const Frankenstein = (function () {
       if (reaction.name != null || reaction.detail != null) {
         reactions.push({
           name: reaction.name,
+          rarity: reaction.rarity,
+          type: reaction.type,
           detail: parseMarkdown(reaction.detail, monster),
         });
       }
@@ -480,6 +490,8 @@ const Frankenstein = (function () {
       if (legendaryAction.name != null || legendaryAction.detail != null) {
         legendaryActions.push({
           name: legendaryAction.name,
+          rarity: legendaryAction.rarity,
+          type: legendaryAction.type,
           detail: parseMarkdown(legendaryAction.detail, monster),
         });
       }
@@ -493,6 +505,8 @@ const Frankenstein = (function () {
       if (lairAction.name != null || lairAction.detail != null) {
         lairActions.push({
           name: lairAction.name,
+          rarity: lairAction.rarity,
+          type: lairAction.type,
           detail: parseMarkdown(lairAction.detail, monster),
         });
       }
