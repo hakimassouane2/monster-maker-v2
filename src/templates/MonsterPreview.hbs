@@ -79,7 +79,7 @@
 					<span class="label"><i class="fa-solid fa-hand-fist"></i> ATK</span>
 					<span>{{fmtModifier monster.attack.bonus}}</span>
 					<span class="label">DD</span>
-					<span>{{monster.dc.primary}} | {{monster.dc.secondary}}</span>
+					<span>{{monster.dc.primary}}/{{monster.dc.secondary}}</span>
 					<span class="label">DMG</span>
 					<span>{{ monster.attack.damage}}</span>
 				</p>
@@ -153,9 +153,10 @@
 			<hr/>
 			{{#if display.traits}}
 				<div class="section-title section-title-traits">
-					<h5 class="h5-traits">GRATUIT</h5>
-					<span></span>
+					<h5 class="h5-traits">TRAITS</h5>
+					<span class="section-span section-span-traits"></span>
 				</div>
+				<div class="border-div"></div>
 				{{#each monster.traits}}
 					<div class="monster-trait">
 						<p><i class="fa-solid trait-icon {{{rarity}}} {{{type}}}"></i>{{#if name}}<span class="name">{{name}}:</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
@@ -165,8 +166,9 @@
 			{{#if display.actions}}
 			<div class="section-title section-title-actions">
 				<h5 class="h5-actions">ACTIONS</h5>
+				<span class="section-span section-span-actions"></span>
 			</div>
-			<div class="h5-border"></div>
+			<div class="border-div"></div>
 				{{#each monster.actions}}
 					<div class="monster-action">
 						<p><i class="fa-solid fa-sword trait-icon {{{rarity}}} {{{type}}}"></i>{{#if name}}<span class="name">{{name}}:</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
@@ -176,26 +178,30 @@
 			{{#if display.reactions}}
 				<div class="section-title section-title-reactions">
 					<h5 class="h5-reactions">RÉACTIONS</h5>
+					<span class="section-span section-span-reactions"></span>
 				</div>
-				<div class="h5-border"></div>
+				<div class="border-div"></div>
 				{{#each monster.reactions}}
 					<div class="monster-reaction">
 						<p><i class="fa-solid fa-sword trait-icon {{{rarity}}} {{{type}}}"></i>{{#if name}}<span class="name">{{name}}:</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
 					</div>
 				{{/each}}
+				<hr />
 			{{/if}}
 			{{#if display.paragonActions}}
 				<div class="section-title section-title-paragon">
 					<h5 class="h5-paragon">ACTIONS PARAGON</h5>
+					<span class="section-span section-span-paragon-actions"></span>
 				</div>
-				<div class="h5-border"></div>
+				<div class="border-div"></div>
 				<p class="paragon-actions">Vous pouvez effectuer {{monster.paragonActions}} une action(s) parangon, en choisissant soit de vous déplacer, soit d'effectuer une action. Une seule action de parangon peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions parangon dépensées au début de votre tour.</p>
 			{{/if}}
 			{{#if display.legendaryActions}}
 			<div class="section-title section-title-legendary">
 				<h5 class="h5-legendary">ACTIONS LÉGENDAIRES</h5>
+				<span class="section-span section-span-legendary-actions"></span>
 			</div>
-				<div class="h5-border"></div>
+			<div class="border-div"></div>
 				{{#if display.legendaryActionsPerRound}}
 					<p class="legendary-per-round">Vous pouvez effectuer {{monster.legendaryActionsPerRound}} action(s) légendaire(s), en choisissant parmi les options ci-dessous. Une seule option d'action légendaire peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions légendaires dépensées au début de votre tour.</p>
 				{{/if}}
@@ -208,8 +214,9 @@
 			{{#if display.lairActions}}
 				<div class="section-title section-title-lair">
 					<h5 class="h5-lair">ACTIONS DE REPAIRE</h5>
+					<span class="section-span section-span-lair-actions"></span>
 				</div>
-				<div class="h5-border"></div>
+				<div class="border-div"></div>
 				{{#if display.lairActionsInitiative}}
 					<p class="lair-initiative">Sur le compte d'initiative {{monster.lairActionsInitiative}}, vous pouvez entreprendre une action de repaire pour déclencher l'un des effets suivants. Vous ne pouvez pas utiliser le même effet deux rounds de suite.</p>
 				{{/if}}
@@ -222,8 +229,9 @@
 			{{#if display.notes}}
 				<div class="section-title section-title-notes">
 					<h5 class="h5-notes">NOTES</h5>
+					<span class="section-span section-span-notes"></span>
 				</div>
-				<div class="h5-border"></div>
+				<div class="border-div"></div>
 				<div class="monster-notes">
 					{{#each monster.notes}}
 						<p class="note">{{{this}}}</p>
