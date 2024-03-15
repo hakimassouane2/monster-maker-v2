@@ -154,7 +154,7 @@
 			{{/if}}
 			<hr/>
 			{{#if display.traits}}
-				<div class="section-title">
+				<div class="section-title section-title-traits">
 					<h5 class="h5-traits">TRAITS</h5>
 					<span></span>
 				</div>
@@ -165,8 +165,8 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.actions}}
-			<div class="section-title">
-				<h5 class="h5-traits">ACTIONS</h5>
+			<div class="section-title section-title-actions">
+				<h5 class="h5-actions">ACTIONS</h5>
 			</div>
 			<div class="h5-border"></div>
 				{{#each monster.actions}}
@@ -176,8 +176,8 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.reactions}}
-				<div class="section-title">
-					<h5 class="h5-traits">RÉACTIONS</h5>
+				<div class="section-title section-title-reactions">
+					<h5 class="h5-reactions">RÉACTIONS</h5>
 				</div>
 				<div class="h5-border"></div>
 				{{#each monster.reactions}}
@@ -187,15 +187,15 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.paragonActions}}
-				<div class="section-title">
-					<h5 class="h5-traits">ACTIONS PARAGON</h5>
+				<div class="section-title section-title-paragon">
+					<h5 class="h5-paragon">ACTIONS PARAGON</h5>
 				</div>
 				<div class="h5-border"></div>
 				<p class="paragon-actions">Vous pouvez effectuer {{monster.paragonActions}} une action(s) parangon, en choisissant soit de vous déplacer, soit d'effectuer une action. Une seule action de parangon peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions parangon dépensées au début de votre tour.</p>
 			{{/if}}
 			{{#if display.legendaryActions}}
-			<div class="section-title">
-				<h5 class="h5-traits">ACTIONS LÉGENDAIRES</h5>
+			<div class="section-title section-title-legendary">
+				<h5 class="h5-legendary">ACTIONS LÉGENDAIRES</h5>
 			</div>
 				<div class="h5-border"></div>
 				{{#if display.legendaryActionsPerRound}}
@@ -208,8 +208,8 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.lairActions}}
-				<div class="section-title">
-					<h5 class="h5-traits">ACTIONS DE REPAIRE</h5>
+				<div class="section-title section-title-lair">
+					<h5 class="h5-lair">ACTIONS DE REPAIRE</h5>
 				</div>
 				<div class="h5-border"></div>
 				{{#if display.lairActionsInitiative}}
@@ -222,8 +222,8 @@
 				{{/each}}
 			{{/if}}
 			{{#if display.notes}}
-				<div class="section-title">
-					<h5 class="h5-traits">NOTES</h5>
+				<div class="section-title section-title-notes">
+					<h5 class="h5-notes">NOTES</h5>
 				</div>
 				<div class="h5-border"></div>
 				<div class="monster-notes">

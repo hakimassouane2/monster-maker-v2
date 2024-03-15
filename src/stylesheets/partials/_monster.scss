@@ -759,17 +759,40 @@
       margin-bottom: 0.3em;
     }
 
+    .section-title-actions {
+      grid-template-columns: 0.26fr 1fr;
+    }
+
+    .section-title-reactions {
+      grid-template-columns: 0.34fr 1fr;
+    }
+
+    .section-title-paragon {
+      grid-template-columns: 0.6fr 1fr;
+    }
+
+    .section-title-lair {
+      grid-template-columns: 0.66fr 1fr;
+    }
+
+    .section-title-legendary {
+      grid-template-columns: 0.75fr 1fr;
+    }
+
+    .section-title-notes {
+      grid-template-columns: 0.22fr 1fr;
+    }
+
     h5 {
-      content: "TRAITS";
       font-weight: bold;
       color: white;
       font-family: "Roboto";
       margin-top: 0 !important;
       background: #831517;
       font-size: 0.8em;
-      padding-left: 1.5em;
-      padding-top: 0.2em;
       padding-bottom: 0.2em;
+      padding-top: 0.2em;
+      padding-left: 1.5em;
       clip-path: polygon(0% 0%, 90% 0, 100% 100%, 100% 100%, 0% 100%);
 
       > * {
