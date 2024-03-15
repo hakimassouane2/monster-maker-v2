@@ -85,7 +85,7 @@ const Helpers = (function () {
         piercing: "Perforant",
         poison: "Poison",
         psychic: "Psychique",
-        radiant: "Radieux",
+        radiant: "Radiant",
         slashing: "Tranchant",
         thunder: "Tonnerre",
       };

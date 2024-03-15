@@ -90,10 +90,52 @@
 					<span class="label"><i class="fa-solid fa-bolt"></i> Vitesse</span>
 					<span>{{{fmtMonsterSpeeds monster.speeds}}}</span>
 				</p>
+				{{#if display.skills}}
 				<p class="body-stats">
 					<span class="label"><i class="fa-solid fa-screwdriver-wrench"></i> Compétences</span>
 					<span>{{#each monster.skills}}{{fmtFormatSkill name}} {{fmtModifier modifier}}{{#unless @last}}, {{/unless}}{{/each}}</span>
 				</p>
+				{{/if}}
+				{{#if display.resistances}}
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-shield-plus"></i> Résistances</span>
+					<span>
+						{{#each monster.resistances}}
+							{{fmtFormatDamages this}}{{#unless @last}}, {{/unless}}
+						{{/each}}
+					</span>
+				</p>
+				{{/if}}
+				{{#if display.vulnerabilities}}
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-shield-minus"></i> Vulnérabilités</span>
+					<span>
+						{{#each monster.vulnerabilities}}
+							{{fmtFormatDamages this}}{{#unless @last}}, {{/unless}}
+						{{/each}}
+					</span>
+				</p>
+				{{/if}}
+				{{#if display.immunities}}
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-shield-heart"></i> Immunités dégâts</span>
+					<span>
+						{{#each monster.immunities}}
+							{{fmtFormatDamages this}}{{#unless @last}}, {{/unless}}
+						{{/each}}
+					</span>
+				</p>
+				{{/if}}
+				{{#if display.conditions}}
+				<p class="body-stats">
+					<span class="label"><i class="fa-solid fa-shield-heart"></i> Immunités status</span>
+					<span>
+						{{#each monster.conditions}}
+							{{fmtFormatConditions this}}{{#unless @last}}, {{/unless}}
+						{{/each}}
+					</span>
+				</p>
+				{{/if}}
 				<p class="body-stats">
 					<span class="label"><i class="fa-solid fa-eye"></i> Sens</span>
 					<span>{{fmtMonsterSenses monster.senses}}</span>
