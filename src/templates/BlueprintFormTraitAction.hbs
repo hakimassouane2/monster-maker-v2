@@ -7,19 +7,19 @@
 	<div class="form-group">
 		<label>Rareté</label>
 		<select class="form-control" data-name="rarity">
-			<option value="common">Commun</option>
-			<option value="uncommon">Peu commun</option>
-			<option value="rare" >Rare</option>
+			<option value="common" {{selectedDefault rarity "common"}}>Commun</option>
+			<option value="uncommon" {{selected rarity "uncommon"}}>Peu commun</option>
+			<option value="rare" {{selected rarity "rare"}}>Rare</option>
 		</select>
 	</div>
 	<div class="form-group">
 		<label>Type</label>
 		<select class="form-control" data-name="type">
-			<option value="passive">Passif</option>
-			<option value="melee">Melée</option>
-			<option value="range" >Distance</option>
-			<option value="magic" >Magique</option>
-			<option value="control" >Contrôle</option>
+			<option value="passive" {{selectedDefault type "passive"}}>Passif</option>
+			<option value="melee" {{selected type "melee"}}>Melée</option>
+			<option value="range" {{selected type "range"}}>Distance</option>
+			<option value="magic" {{selected type "magic"}}>Magique</option>
+			<option value="control" {{selected type "control"}}>Contrôle</option>
 		</select>
 	</div>
 	<div class="form-group">
