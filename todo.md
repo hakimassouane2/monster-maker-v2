@@ -1,0 +1,7 @@
+- Implement a save to S3 function when clicking save
+- Implement a fetch function on load of the vault panel to fetch the json files from S3
+- Add default actions
+- Add default reactions
+- Add a bonus action system
+- Add default bonus actions
+- Add all techniques from the giffyglyph compendium
