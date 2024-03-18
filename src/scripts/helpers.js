@@ -37,6 +37,23 @@ const Helpers = (function () {
       return Math.floor(a / b);
     });
 
+    Handlebars.registerHelper("divideRoundDownMinOne", function (a, b) {
+      const result = Math.floor(a / b);
+      return result > 0 ? result : 1;
+    });
+
+    Handlebars.registerHelper("multiplyRoundDown", function (a, b) {
+      if (typeof a === "string") {
+        a = parseFloat(a);
+      }
+      if (typeof b === "string") {
+        b = parseFloat(b);
+      }
+
+      console.log(a, b, Math.floor(a * b));
+      return Math.floor(a * b);
+    });
+
     Handlebars.registerHelper("setValue", function (value) {
       return value == undefined || value == null
         ? ""

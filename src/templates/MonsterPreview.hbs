@@ -162,6 +162,14 @@
 						<p><i class="fa-solid trait-icon {{{rarity}}} {{{type}}}"></i>{{#if name}}<span class="name">{{name}}:</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
 					</div>
 				{{/each}}
+				{{#if display.paragonActions}}
+					<div class="monster-trait">
+						<p><i class="fa-solid trait-icon uncommon passive"></i><span class="name">Pouvoir du Paragon ({{monster.paragonActions}}/round):</span> <span class="detail">À la fin du tour d'une autre créature, vous pouvez soit a) entreprendre une action et récupérer votre réaction, soit b) relancer un jet de sauvegarde, soit c) renforcer une action. </span></p>
+					</div>
+					<div class="monster-trait">
+						<p><i class="fa-solid trait-icon rare passive"></i><span class="name">Défense du Paragon ({{divideRoundDownMinOne monster.paragonActions 2}}/combat):</span> <span class="detail">Lorsque vous échouez à un jet de sauvegarde, vous pouvez dépenser {{multiplyRoundDown monster.description.level 2}} points de vie pour réussir. </span></p>
+					</div>
+				{{/if}}
 			{{/if}}
 			{{#if display.actions}}
 			<div class="section-title section-title-actions">
@@ -188,14 +196,14 @@
 				{{/each}}
 				<hr />
 			{{/if}}
-			{{#if display.paragonActions}}
+			{{!-- {{#if display.paragonActions}}
 				<div class="section-title section-title-paragon">
 					<h5 class="h5-paragon">ACTIONS PARAGON</h5>
 					<span class="section-span section-span-paragon-actions"></span>
 				</div>
 				<div class="border-div"></div>
-				<p class="paragon-actions">Vous pouvez effectuer {{monster.paragonActions}} une action(s) parangon, en choisissant soit de vous déplacer, soit d'effectuer une action. Une seule action de parangon peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions parangon dépensées au début de votre tour.</p>
-			{{/if}}
+				<p class="paragon-actions">Vous obtenez {{monster.paragonActions}} pouvoir du Paragon et {{divideRoundDown monster.paragonActions 2}} Défense du Paragon. À la fin du tour d'une autre créature, vous pouvez soit a) entreprendre une action et récupérer votre réaction, soit b) relancer un jet de sauvegarde.</p>
+			{{/if}} --}}
 			{{#if display.legendaryActions}}
 			<div class="section-title section-title-legendary">
 				<h5 class="h5-legendary">ACTIONS LÉGENDAIRES</h5>
@@ -508,7 +516,7 @@
 			{{#if display.paragonActions}}
 				<h5>Actions Paragon</h5>
 				<div class="h5-border"></div>
-				<p class="paragon-actions">Vous pouvez effectuer {{monster.paragonActions}} une action(s) parangon, en choisissant soit de vous déplacer, soit d'effectuer une action. Une seule action de parangon peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions parangon dépensées au début de votre tour.</p>
+				<p class="paragon-actions">Vous pouvez effectuer {{monster.paragonActions}} une action(s) paragon, en choisissant soit de vous déplacer, soit d'effectuer une action. Une seule action de paragon peut être utilisée à la fois et seulement à la fin du tour d'une autre créature. Vous récupérez les actions paragon dépensées au début de votre tour.</p>
 			{{/if}}
 			{{#if display.legendaryActions}}
 				<h5>Actions Légendaires</h5>

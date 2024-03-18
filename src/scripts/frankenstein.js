@@ -402,6 +402,17 @@ const Frankenstein = (function () {
 
     // Set traits
     let traits = [];
+
+    blueprint.getTraits().forEach(function (trait) {
+      if (trait.name != null || trait.detail != null) {
+        traits.push({
+          name: trait.name,
+          rarity: trait.rarity,
+          type: trait.type,
+          detail: parseMarkdown(trait.detail, monster),
+        });
+      }
+    });
     if (blueprint.getRank() == "solo") {
       if (
         blueprint.getPhase() != null &&
@@ -424,16 +435,6 @@ const Frankenstein = (function () {
         });
       }
     }
-    blueprint.getTraits().forEach(function (trait) {
-      if (trait.name != null || trait.detail != null) {
-        traits.push({
-          name: trait.name,
-          rarity: trait.rarity,
-          type: trait.type,
-          detail: parseMarkdown(trait.detail, monster),
-        });
-      }
-    });
     monster.setTraits(traits);
 
     // Set actions
