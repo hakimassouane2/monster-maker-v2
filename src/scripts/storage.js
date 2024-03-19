@@ -1,5 +1,6 @@
 import Blueprint from "./classes/blueprint.js";
 import Challenge from "./classes/challenge.js";
+import DEFAULT_ACTIONS from "./consts/default_actions.js";
 import DEFAULT_RANKS from "./consts/default_ranks.js";
 import DEFAULT_ROLES from "./consts/default_roles.js";
 import DEFAULT_TRAITS from "./consts/default_traits.js";
@@ -15,6 +16,7 @@ const Storage = (function () {
       roles: getDefaultRoles(),
       ranks: getDefaultRanks(),
       traits: getDefaultTraits(),
+      actions: getDefaultActions(),
     },
     vault: {
       id: 0,
@@ -41,13 +43,7 @@ const Storage = (function () {
         rarity: "common",
         type: "passive",
         detail:
-          "Une fois par tour, ajoutez votre niveau en dégâts supplémentaires à une attaque.",
-      },
-      {
-        name: "Rapide",
-        rarity: "common",
-        type: "passive",
-        detail: "Vous pouvez <i>Foncer</i> via votre action bonus.",
+          "Une fois par tour, ajoutez votre niveau ([level]) en dégâts supplémentaires à une attaque.",
       },
     ]);
     blueprint.setActions([
@@ -57,13 +53,6 @@ const Storage = (function () {
         type: "melee",
         detail:
           "_Mêlée:_ [attack] vs DEF. _Touché:_ [damage, d4] dégâts tranchants.",
-      },
-      {
-        name: "Recul",
-        rarity: "common",
-        type: "melee",
-        detail:
-          "_Mêlée:_ [dc-primary] vs FOR. _Touché:_ la cible est repoussée jusqu'à 2 cases de distance.",
       },
     ]);
     return {
@@ -133,6 +122,13 @@ const Storage = (function () {
    */
   function getDefaultTraits() {
     return DEFAULT_TRAITS;
+  }
+
+  /**
+   * Get the default monster actions.
+   */
+  function getDefaultActions() {
+    return DEFAULT_ACTIONS;
   }
 
   /**
@@ -256,6 +252,20 @@ const Storage = (function () {
    */
   function getTrait(id) {
     return data.fragments.traits.find((x) => x.id == id);
+  }
+
+  /**
+   * Gets the action fragments.
+   */
+  function getActions() {
+    return data.fragments.actions;
+  }
+
+  /**
+   * Gets a specific action fragment.
+   */
+  function getAction(id) {
+    return data.fragments.actions.find((x) => x.id == id);
   }
 
   /**
@@ -392,6 +402,8 @@ const Storage = (function () {
     getRanks: getRanks,
     getTraits: getTraits,
     getTrait: getTrait,
+    getActions: getActions,
+    getAction: getAction,
     getMonsters: getMonsters,
     setMonsters: setMonsters,
     getMonster: getMonster,

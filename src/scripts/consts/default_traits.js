@@ -374,7 +374,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Absorption de dégâts",
     description:
-      "Chaque fois que vous devriez subir des dégâts d'un type spécifique, vous regagnez à la place ce namebre de points de vie",
+      "Chaque fois que vous devriez subir des dégâts d'un type spécifique, vous regagnez à la place ce nombre de points de vie",
   },
   {
     id: 54,
@@ -581,7 +581,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Régénération",
     description:
-      "Vous regagnez au début de votre tour un namebre de points de vie égal à 2 ou votre maximum de points de vie / 3 (le plus élevé). Cette régénération s'arrête pendant 1 tour si vous êtes touché par un type de dégât spécifique (feu/acide/foudre/etc) ou si vous êtes réduit à 0 point de vie",
+      "Vous regagnez au début de votre tour un nombre de points de vie égal à 2 ou votre maximum de points de vie / 3 (le plus élevé). Cette régénération s'arrête pendant 1 tour si vous êtes touché par un type de dégât spécifique (feu/acide/foudre/etc) ou si vous êtes réduit à 0 point de vie",
   },
   {
     id: 84,
@@ -602,7 +602,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Ombre furtive",
     description:
-      "Dans la pénamebre ou l'obscurité, vous pouvez entreprendre l'action Dissimuler via votre action bonus.",
+      "Dans la pénombre ou l'obscurité, vous pouvez entreprendre l'action Dissimuler via votre action bonus.",
   },
   {
     id: 87,

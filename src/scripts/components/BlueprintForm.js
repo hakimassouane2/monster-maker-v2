@@ -176,6 +176,50 @@ class BlueprintForm extends Component {
       }.bind(this)
     );
 
+    // Change the action filter
+    $(this.el).on("change", "#modal-blueprint-actions select", function () {
+      $(this).closest(".modal-body").attr("filter", $(this).val());
+    });
+
+    $(this.el).on("hidden.bs.modal", "#modal-blueprint-actions", function (e) {
+      $("#modal-blueprint-actions select").val("any");
+      $("#modal-blueprint-actions select").trigger("change");
+      $("#modal-blueprint-actions .form-check-input:checked").prop(
+        "checked",
+        false
+      );
+    });
+
+    // Add selected actions to laboratory blueprint
+    $(this.el).on(
+      "click",
+      "#modal-blueprint-actions .btn-confirm",
+      function (e) {
+        $("#modal-blueprint-actions .form-check-input:checked").each(
+          function (index, checkbox) {
+            let action = this.data.actions.find(
+              (x) => x.id == $(checkbox).val()
+            );
+            $("#blueprint-action .card-body").append(
+              Handlebars.templates["BlueprintFormTraitAction"]({
+                name: action.role
+                  ? "(" + Helpers.capitalise(action.role) + ") " + action.name
+                  : action.name,
+                rarity: action.rarity,
+                type: action.type,
+                detail: action.description,
+              })
+            );
+          }.bind(this)
+        );
+        this.updateRepeatableFieldNames(
+          $("#blueprint-action").closest(".repeatable-section")
+        );
+        $(this.el + " form").change();
+        $("#modal-blueprint-actions .close").click();
+      }.bind(this)
+    );
+
     $(this.el).on("click", ".btn-open-settings", function (e) {
       $("#modal-blueprint-help-theme").one("hidden.bs.modal", function () {
         $("#modal-settings").modal("show");

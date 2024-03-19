@@ -31,6 +31,9 @@ class PanelLaboratory extends Component {
         traits: Storage.getTraits().sort((a, b) =>
           a.name.localeCompare(b.name)
         ),
+        actions: Storage.getActions().sort((a, b) =>
+          a.name.localeCompare(b.name)
+        ),
       },
     });
     this.children["preview"] = new MonsterPreview({

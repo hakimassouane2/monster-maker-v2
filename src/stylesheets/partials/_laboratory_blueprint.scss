@@ -355,6 +355,60 @@
   }
 }
 
+#modal-blueprint-actions .modal-body {
+  &:not([filter="any"]) .trait.any,
+  &:not([filter="controller"]) .trait.controller,
+  &:not([filter="defender"]) .trait.defender,
+  &:not([filter="lurker"]) .trait.lurker,
+  &:not([filter="striker"]) .trait.striker,
+  &:not([filter="supporter"]) .trait.supporter,
+  &:not([filter="sniper"]) .trait.sniper,
+  &:not([filter="scout"]) .trait.scout {
+    display: none;
+  }
+
+  select {
+    margin-bottom: $spacing-lg;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    .title {
+      margin: 0;
+    }
+
+    .description {
+      font-size: small;
+      margin: 0;
+    }
+  }
+
+  .form-check:hover {
+    background: #eef0f2;
+    margin-left: -$spacing-lg;
+    margin-right: -$spacing-lg;
+    padding-left: $spacing-lg * 2;
+    padding-right: $spacing-lg;
+  }
+
+  .form-check-label {
+    cursor: pointer;
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-sm;
+    width: 100%;
+  }
+
+  .form-check-input {
+    top: $spacing-sm;
+
+    &:checked ~ label {
+      color: $theme-primary;
+    }
+  }
+}
+
 #modal-markdown {
   .accordion-markdown-help {
     table {

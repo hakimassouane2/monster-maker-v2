@@ -746,7 +746,7 @@
 						</button>
 						<div class="dropdown-menu dropdown-menu-right">
 							<button type="button" class="dropdown-item btn-add">
-								<span class="fas fa-edit"></span>Trait Custom
+								<span class="fas fa-edit"></span>Nouveau Trait
 							</button>
 							<button type="button" class="dropdown-item" data-toggle="modal" data-target="#modal-blueprint-traits">
 								<span class="fas fa-list"></span>Choisir des Traits
@@ -777,8 +777,21 @@
 					<button class="btn btn-sm btn-secondary icon-only icon-border" type="button" data-toggle="modal" data-target="#modal-markdown">
 						<span class="fas fa-question"></span>
 					</button>
-					<button type="button" class="btn btn-sm btn-secondary btn-add">
-						<span class="fas fa-plus"></span> Ajouter une Action
+					<div class="dropdown dropdown-options quickstart-only">
+						<button class="btn btn-sm btn-secondary" type="button" data-toggle="dropdown">
+							<span class="fas fa-plus"></span> Ajouter une Action
+						</button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<button type="button" class="dropdown-item btn-add">
+								<span class="fas fa-edit"></span>Nouvelle Action
+							</button>
+							<button type="button" class="dropdown-item" data-toggle="modal" data-target="#modal-blueprint-actions">
+								<span class="fas fa-list"></span>Choisir des Actions
+							</button>
+						</div>
+					</div>
+					<button type="button" class="btn btn-sm btn-secondary btn-add manual-only">
+						<span class="fas fa-plus"></span> Ajouter une action
 					</button>
 				</div>
 			</div>
@@ -1064,13 +1077,13 @@
 			<div class="modal-body" filter="any">
 				<select class="form-control">
 					<option value="any" selected>Tous les rôles</option>
-					<option value="controller">Controller</option>
-					<option value="defender">Defender</option>
-					<option value="lurker">Lurker</option>
-					<option value="scout">Scout</option>
+					<option value="controller">Contrôleur</option>
+					<option value="defender">Défenseur</option>
+					<option value="lurker">Rôdeur</option>
+					<option value="scout">Éclaireur</option>
 					<option value="sniper">Sniper</option>
-					<option value="striker">Striker</option>
-					<option value="supporter">Supporter</option>
+					<option value="striker">Assaillant</option>
+					<option value="supporter">Soutien</option>
 				</select>
 				<ul>
 					{{#each traits}}
@@ -1078,6 +1091,53 @@
 							<div class="form-check">
 							  <input class="form-check-input" type="checkbox" value="{{id}}" id="trait-{{id}}">
 							  <label class="form-check-label" for="trait-{{id}}">
+							    <p class="title"><strong>{{name}}</strong></p>
+									<p class="description">{{{description}}}</p>
+							  </label>
+							</div>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">
+					<span class="fas fa-times"></span> Annuler
+				</button>
+				<button type="button" class="btn btn-primary btn-confirm">
+					<span class="fas fa-check"></span> Ok
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-blueprint-actions" class="modal fade">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">
+					<span class="card-icon fas fa-question"></span> Choisir des Actions
+				</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body" filter="any">
+				<select class="form-control">
+					<option value="any" selected>Tous les rôles</option>
+					<option value="controller">Contrôleur</option>
+					<option value="defender">Défenseur</option>
+					<option value="lurker">Rôdeur</option>
+					<option value="scout">Éclaireur</option>
+					<option value="sniper">Sniper</option>
+					<option value="striker">Assaillant</option>
+					<option value="supporter">Soutien</option>
+				</select>
+				<ul>
+					{{#each actions}}
+						<li class="trait {{#if role}}{{role}}{{/if}}{{#unless role}}any{{/unless}}">
+							<div class="form-check">
+							  <input class="form-check-input" type="checkbox" value="{{id}}" id="action-{{id}}">
+							  <label class="form-check-label" for="action-{{id}}">
 							    <p class="title"><strong>{{name}}</strong></p>
 									<p class="description">{{{description}}}</p>
 							  </label>
