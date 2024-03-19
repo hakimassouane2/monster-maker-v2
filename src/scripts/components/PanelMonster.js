@@ -38,6 +38,9 @@ class PanelMonster extends Component {
           traits: Storage.getTraits().sort((a, b) =>
             a.name.localeCompare(b.name)
           ),
+          bonusActions: Storage.getBonusActions().sort((a, b) =>
+            a.name.localeCompare(b.name)
+          ),
           actions: Storage.getActions().sort((a, b) =>
             a.name.localeCompare(b.name)
           ),

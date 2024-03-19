@@ -222,6 +222,7 @@
   }
 
   .monster-trait,
+  .monster-bonus-action,
   .monster-action,
   .monster-reaction,
   .monster-legendary-action,
@@ -721,6 +722,11 @@
       margin-bottom: 0;
     }
 
+    .monster-bonus-action {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
     .monster-action {
       margin-top: 0;
       margin-bottom: 0;
@@ -831,6 +837,10 @@
       margin: auto;
       margin-top: -0.1em;
       margin-bottom: 0.5em;
+    }
+
+    .section-title-bonus-actions {
+      grid-template-columns: 0.6fr 1fr;
     }
 
     .section-title-actions {

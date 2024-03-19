@@ -64,6 +64,13 @@ const Exporters = (function () {
           Usage: "",
         };
       }),
+      BonusActions: monster.getBonusActions().map(function (x) {
+        return {
+          Name: x.name,
+          Content: x.detail,
+          Usage: "",
+        };
+      }),
       Actions: monster.getActions().map(function (x) {
         return {
           Name: x.name,

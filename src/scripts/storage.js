@@ -1,6 +1,7 @@
 import Blueprint from "./classes/blueprint.js";
 import Challenge from "./classes/challenge.js";
 import DEFAULT_ACTIONS from "./consts/default_actions.js";
+import DEFAULT_BONUS_ACTIONS from "./consts/default_bonus_actions.js";
 import DEFAULT_RANKS from "./consts/default_ranks.js";
 import DEFAULT_ROLES from "./consts/default_roles.js";
 import DEFAULT_TRAITS from "./consts/default_traits.js";
@@ -16,6 +17,7 @@ const Storage = (function () {
       roles: getDefaultRoles(),
       ranks: getDefaultRanks(),
       traits: getDefaultTraits(),
+      bonusActions: getDefaultBonusActions(),
       actions: getDefaultActions(),
     },
     vault: {
@@ -44,6 +46,15 @@ const Storage = (function () {
         type: "passive",
         detail:
           "Une fois par tour, ajoutez votre niveau ([level]) en dégâts supplémentaires à une attaque.",
+      },
+    ]);
+    blueprint.setBonusActions([
+      {
+        name: "Découper",
+        rarity: "common",
+        type: "melee",
+        detail:
+          "_Mêlée:_ [attack] vs DEF. _Touché:_ [damage, d4] dégâts tranchants.",
       },
     ]);
     blueprint.setActions([
@@ -122,6 +133,13 @@ const Storage = (function () {
    */
   function getDefaultTraits() {
     return DEFAULT_TRAITS;
+  }
+
+  /**
+   * Get the default monster bonus actions.
+   */
+  function getDefaultBonusActions() {
+    return DEFAULT_BONUS_ACTIONS;
   }
 
   /**
@@ -252,6 +270,20 @@ const Storage = (function () {
    */
   function getTrait(id) {
     return data.fragments.traits.find((x) => x.id == id);
+  }
+
+  /**
+   * Gets the bonus action fragments.
+   */
+  function getBonusActions() {
+    return data.fragments.bonusActions;
+  }
+
+  /**
+   * Gets a specific bonus action fragment.
+   */
+  function getBonusAction(id) {
+    return data.fragments.bonusActions.find((x) => x.id == id);
   }
 
   /**
@@ -402,6 +434,8 @@ const Storage = (function () {
     getRanks: getRanks,
     getTraits: getTraits,
     getTrait: getTrait,
+    getBonusActions: getBonusActions,
+    getBonusAction: getBonusAction,
     getActions: getActions,
     getAction: getAction,
     getMonsters: getMonsters,

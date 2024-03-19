@@ -759,6 +759,43 @@
 				</div>
 			</div>
 		</div>
+		<div class="card repeatable-section" data-path="bonusActions" data-template="BlueprintFormTraitAction">
+			<div class="card-header">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-bonus-action" {{#if display.blueprint-bonus-action}}aria-expanded="true"{{/if}}>
+					<span class="fas fa-chevron-right"></span>
+					<span class="title">Actions Bonus</span>
+					<span class="badge">{{blueprint.bonusActions.length}}</span>
+				</button>
+			</div>
+			<div id="blueprint-bonus-action" class="collapse {{#if display.blueprint-bonus-action}}show{{/if}}" data-parent="#accordion-blueprint">
+				<div class="card-body">
+					{{#each blueprint.bonusActions}}
+						{{> BlueprintFormTraitAction this}}
+					{{/each}}
+				</div>
+				<div class="card-footer text-right">
+					<button class="btn btn-sm btn-secondary icon-only icon-border" type="button" data-toggle="modal" data-target="#modal-markdown">
+						<span class="fas fa-question"></span>
+					</button>
+					<div class="dropdown dropdown-options quickstart-only">
+						<button class="btn btn-sm btn-secondary" type="button" data-toggle="dropdown">
+							<span class="fas fa-plus"></span> Ajouter une Action Bonus
+						</button>
+						<div class="dropdown-menu dropdown-menu-right">
+							<button type="button" class="dropdown-item btn-add">
+								<span class="fas fa-edit"></span>Nouvelle Action Bonus
+							</button>
+							<button type="button" class="dropdown-item" data-toggle="modal" data-target="#modal-blueprint-bonus-actions">
+								<span class="fas fa-list"></span>Choisir des Actions Bonus
+							</button>
+						</div>
+					</div>
+					<button type="button" class="btn btn-sm btn-secondary btn-add manual-only">
+						<span class="fas fa-plus"></span> Ajouter une Action bonus
+					</button>
+				</div>
+			</div>
+		</div>
 		<div class="card repeatable-section" data-path="actions" data-template="BlueprintFormTraitAction">
 			<div class="card-header">
 				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#blueprint-action" {{#if display.blueprint-action}}aria-expanded="true"{{/if}}>
@@ -1110,6 +1147,53 @@
 		</div>
 	</div>
 </div>
+<div id="modal-blueprint-bonus-actions" class="modal fade">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">
+					<span class="card-icon fas fa-question"></span> Choisir des Actions Bonus
+				</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body" filter="any">
+				<select class="form-control">
+					<option value="any" selected>Tous les rôles</option>
+					<option value="controller">Contrôleur</option>
+					<option value="defender">Défenseur</option>
+					<option value="lurker">Rôdeur</option>
+					<option value="scout">Éclaireur</option>
+					<option value="sniper">Sniper</option>
+					<option value="striker">Assaillant</option>
+					<option value="supporter">Soutien</option>
+				</select>
+				<ul>
+					{{#each bonusActions}}
+						<li class="bonus-action {{#if role}}{{role}}{{/if}}{{#unless role}}any{{/unless}}">
+							<div class="form-check">
+							  <input class="form-check-input" type="checkbox" value="{{id}}" id="bonus-action-{{id}}">
+							  <label class="form-check-label" for="bonus-action-{{id}}">
+							    <p class="title"><strong>{{name}}</strong></p>
+									<p class="description">{{{description}}}</p>
+							  </label>
+							</div>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">
+					<span class="fas fa-times"></span> Annuler
+				</button>
+				<button type="button" class="btn btn-primary btn-confirm">
+					<span class="fas fa-check"></span> Ok
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
 <div id="modal-blueprint-actions" class="modal fade">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 		<div class="modal-content">
@@ -1134,7 +1218,7 @@
 				</select>
 				<ul>
 					{{#each actions}}
-						<li class="trait {{#if role}}{{role}}{{/if}}{{#unless role}}any{{/unless}}">
+						<li class="action {{#if role}}{{role}}{{/if}}{{#unless role}}any{{/unless}}">
 							<div class="form-check">
 							  <input class="form-check-input" type="checkbox" value="{{id}}" id="action-{{id}}">
 							  <label class="form-check-label" for="action-{{id}}">

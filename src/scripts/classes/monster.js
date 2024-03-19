@@ -56,6 +56,7 @@ class Monster {
       xp: null,
     };
     this.traits = [];
+    this.bonusActions = [];
     this.actions = [];
     this.reactions = [];
     this.paragonActions = null;
@@ -399,6 +400,14 @@ class Monster {
 
   setTraits(traits) {
     this.traits = traits;
+  }
+
+  getBonusActions() {
+    return this.bonusActions;
+  }
+
+  setBonusActions(bonusActions) {
+    this.bonusActions = bonusActions;
   }
 
   getActions() {

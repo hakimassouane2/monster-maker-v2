@@ -99,6 +99,7 @@ class Blueprint {
       },
     };
     this.traits = [];
+    this.bonusActions = [];
     this.actions = [];
     this.reactions = [];
     this.paragonActions = {
@@ -419,6 +420,17 @@ class Blueprint {
         detail: parseString(trait.detail),
       };
     });
+    this.bonusActions = parseArray(
+      options.bonusActions,
+      function (bonusAction) {
+        return {
+          name: parseString(bonusAction.name),
+          rarity: parseString(bonusAction.rarity),
+          type: parseString(bonusAction.type),
+          detail: parseString(bonusAction.detail),
+        };
+      }
+    );
     this.actions = parseArray(options.actions, function (action) {
       return {
         name: parseString(action.name),
@@ -883,6 +895,14 @@ class Blueprint {
 
   setTraits(traits) {
     this.traits = traits;
+  }
+
+  getBonusActions() {
+    return this.bonusActions;
+  }
+
+  setBonusActions(bonusActions) {
+    this.bonusActions = bonusActions;
   }
 
   getActions() {

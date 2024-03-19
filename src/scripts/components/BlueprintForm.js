@@ -176,6 +176,61 @@ class BlueprintForm extends Component {
       }.bind(this)
     );
 
+    // Change the bonus action filter
+    $(this.el).on(
+      "change",
+      "#modal-blueprint-bonus-actions select",
+      function () {
+        $(this).closest(".modal-body").attr("filter", $(this).val());
+      }
+    );
+
+    $(this.el).on(
+      "hidden.bs.modal",
+      "#modal-blueprint-bonus-actions",
+      function (e) {
+        $("#modal-blueprint-bonus-actions select").val("any");
+        $("#modal-blueprint-bonus-actions select").trigger("change");
+        $("#modal-blueprint-bonus-actions .form-check-input:checked").prop(
+          "checked",
+          false
+        );
+      }
+    );
+
+    // Add selected bonus actions to laboratory blueprint
+    $(this.el).on(
+      "click",
+      "#modal-blueprint-bonus-actions .btn-confirm",
+      function (e) {
+        $("#modal-blueprint-bonus-actions .form-check-input:checked").each(
+          function (index, checkbox) {
+            let bonusAction = this.data.bonusActions.find(
+              (x) => x.id == $(checkbox).val()
+            );
+            $("#blueprint-bonus-action .card-body").append(
+              Handlebars.templates["BlueprintFormTraitAction"]({
+                name: bonusAction.role
+                  ? "(" +
+                    Helpers.capitalise(bonusAction.role) +
+                    ") " +
+                    bonusAction.name
+                  : bonusAction.name,
+                rarity: bonusAction.rarity,
+                type: bonusAction.type,
+                detail: bonusAction.description,
+              })
+            );
+          }.bind(this)
+        );
+        this.updateRepeatableFieldNames(
+          $("#blueprint-bonus-action").closest(".repeatable-section")
+        );
+        $(this.el + " form").change();
+        $("#modal-blueprint-bonus-actions .close").click();
+      }.bind(this)
+    );
+
     // Change the action filter
     $(this.el).on("change", "#modal-blueprint-actions select", function () {
       $(this).closest(".modal-body").attr("filter", $(this).val());
