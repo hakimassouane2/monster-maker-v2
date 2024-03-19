@@ -3,4 +3,4 @@ node_modules
 
 .publish/
 .cache/
-src/scripts/template.js
+src/scripts/templates.js
