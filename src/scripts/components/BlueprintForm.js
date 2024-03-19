@@ -176,6 +176,61 @@ class BlueprintForm extends Component {
       }.bind(this)
     );
 
+    // Change the free action filter
+    $(this.el).on(
+      "change",
+      "#modal-blueprint-free-actions select",
+      function () {
+        $(this).closest(".modal-body").attr("filter", $(this).val());
+      }
+    );
+
+    $(this.el).on(
+      "hidden.bs.modal",
+      "#modal-blueprint-free-actions",
+      function (e) {
+        $("#modal-blueprint-free-actions select").val("any");
+        $("#modal-blueprint-free-actions select").trigger("change");
+        $("#modal-blueprint-free-actions .form-check-input:checked").prop(
+          "checked",
+          false
+        );
+      }
+    );
+
+    // Add selected free actions to laboratory blueprint
+    $(this.el).on(
+      "click",
+      "#modal-blueprint-free-actions .btn-confirm",
+      function (e) {
+        $("#modal-blueprint-free-actions .form-check-input:checked").each(
+          function (index, checkbox) {
+            let freeAction = this.data.freeActions.find(
+              (x) => x.id == $(checkbox).val()
+            );
+            $("#blueprint-free-action .card-body").append(
+              Handlebars.templates["BlueprintFormTraitAction"]({
+                name: freeAction.role
+                  ? "(" +
+                    Helpers.capitalise(freeAction.role) +
+                    ") " +
+                    freeAction.name
+                  : freeAction.name,
+                rarity: freeAction.rarity,
+                type: freeAction.type,
+                detail: freeAction.description,
+              })
+            );
+          }.bind(this)
+        );
+        this.updateRepeatableFieldNames(
+          $("#blueprint-free-action").closest(".repeatable-section")
+        );
+        $(this.el + " form").change();
+        $("#modal-blueprint-free-actions .close").click();
+      }.bind(this)
+    );
+
     // Change the bonus action filter
     $(this.el).on(
       "change",

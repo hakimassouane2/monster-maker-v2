@@ -56,6 +56,7 @@ class Monster {
       xp: null,
     };
     this.traits = [];
+    this.freeActions = [];
     this.bonusActions = [];
     this.actions = [];
     this.reactions = [];
@@ -400,6 +401,14 @@ class Monster {
 
   setTraits(traits) {
     this.traits = traits;
+  }
+
+  getFreeActions() {
+    return this.freeActions;
+  }
+
+  setFreeActions(freeActions) {
+    this.freeActions = freeActions;
   }
 
   getBonusActions() {

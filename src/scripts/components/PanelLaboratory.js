@@ -31,6 +31,9 @@ class PanelLaboratory extends Component {
         traits: Storage.getTraits().sort((a, b) =>
           a.name.localeCompare(b.name)
         ),
+        freeActions: Storage.getFreeActions().sort((a, b) =>
+          a.name.localeCompare(b.name)
+        ),
         bonusActions: Storage.getBonusActions().sort((a, b) =>
           a.name.localeCompare(b.name)
         ),
@@ -119,6 +122,7 @@ class PanelLaboratory extends Component {
           function () {
             let blueprint = Storage.getLaboratoryBlueprint();
             blueprint.setTraits([]);
+            blueprint.setFreeActions([]);
             blueprint.setBonusActions([]);
             blueprint.setActions([]);
             blueprint.setReactions([]);

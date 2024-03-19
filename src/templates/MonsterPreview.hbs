@@ -171,6 +171,18 @@
 					</div>
 				{{/if}}
 			{{/if}}
+			{{#if display.freeActions}}
+			<div class="section-title section-title-free-actions">
+				<h5 class="h5-free-actions">GRATUIT</h5>
+				<span class="section-span section-span-free-actions"></span>
+			</div>
+			<div class="border-div"></div>
+				{{#each monster.freeActions}}
+					<div class="monster-free-action">
+						<p><i class="fa-solid trait-icon {{{rarity}}} {{{type}}}"></i>{{#if name}}<span class="name">{{name}}:</span>{{/if}}{{#if detail}} <span class="detail">{{{detail}}}</span>{{/if}}</p>
+					</div>
+				{{/each}}
+			{{/if}}
 			{{#if display.bonusActions}}
 			<div class="section-title section-title-bonus-actions">
 				<h5 class="h5-bonus-actions">ACTIONS BONUS</h5>

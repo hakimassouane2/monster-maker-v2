@@ -92,6 +92,7 @@ class MonsterPreview extends Component {
         monster.getChallengeRating() != null ||
         monster.getChallengeXp() != null,
       traits: monster.getTraits().length > 0,
+      freeActions: monster.getFreeActions().length > 0,
       bonusActions: monster.getBonusActions().length > 0,
       actions: monster.getActions().length > 0,
       reactions: monster.getReactions().length > 0,

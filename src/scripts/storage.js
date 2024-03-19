@@ -2,6 +2,7 @@ import Blueprint from "./classes/blueprint.js";
 import Challenge from "./classes/challenge.js";
 import DEFAULT_ACTIONS from "./consts/default_actions.js";
 import DEFAULT_BONUS_ACTIONS from "./consts/default_bonus_actions.js";
+import DEFAULT_FREE_ACTIONS from "./consts/default_free_actions.js";
 import DEFAULT_RANKS from "./consts/default_ranks.js";
 import DEFAULT_ROLES from "./consts/default_roles.js";
 import DEFAULT_TRAITS from "./consts/default_traits.js";
@@ -17,6 +18,7 @@ const Storage = (function () {
       roles: getDefaultRoles(),
       ranks: getDefaultRanks(),
       traits: getDefaultTraits(),
+      freeActions: getDefaultFreeActions(),
       bonusActions: getDefaultBonusActions(),
       actions: getDefaultActions(),
     },
@@ -46,15 +48,6 @@ const Storage = (function () {
         type: "passive",
         detail:
           "Une fois par tour, ajoutez votre niveau ([level]) en dégâts supplémentaires à une attaque.",
-      },
-    ]);
-    blueprint.setBonusActions([
-      {
-        name: "Découper",
-        rarity: "common",
-        type: "melee",
-        detail:
-          "_Mêlée:_ [attack] vs DEF. _Touché:_ [damage, d4] dégâts tranchants.",
       },
     ]);
     blueprint.setActions([
@@ -133,6 +126,13 @@ const Storage = (function () {
    */
   function getDefaultTraits() {
     return DEFAULT_TRAITS;
+  }
+
+  /**
+   * Get the default monster free actions.
+   */
+  function getDefaultFreeActions() {
+    return DEFAULT_FREE_ACTIONS;
   }
 
   /**
@@ -270,6 +270,20 @@ const Storage = (function () {
    */
   function getTrait(id) {
     return data.fragments.traits.find((x) => x.id == id);
+  }
+
+  /**
+   * Gets the free action fragments.
+   */
+  function getFreeActions() {
+    return data.fragments.freeActions;
+  }
+
+  /**
+   * Gets a specific free action fragment.
+   */
+  function getFreeAction(id) {
+    return data.fragments.freeActions.find((x) => x.id == id);
   }
 
   /**
@@ -434,6 +448,8 @@ const Storage = (function () {
     getRanks: getRanks,
     getTraits: getTraits,
     getTrait: getTrait,
+    getFreeActions: getFreeActions,
+    getFreeAction: getFreeAction,
     getBonusActions: getBonusActions,
     getBonusAction: getBonusAction,
     getActions: getActions,

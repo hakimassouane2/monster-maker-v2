@@ -437,6 +437,20 @@ const Frankenstein = (function () {
     }
     monster.setTraits(traits);
 
+    // Set free actions
+    let freeActions = [];
+    blueprint.getFreeActions().forEach(function (freeAction) {
+      if (freeAction.name != null || freeAction.detail != null) {
+        freeActions.push({
+          name: freeAction.name,
+          rarity: freeAction.rarity,
+          type: freeAction.type,
+          detail: parseMarkdown(freeAction.detail, monster),
+        });
+      }
+    });
+    monster.setFreeActions(freeActions);
+
     // Set bonus actions
     let bonusActions = [];
     blueprint.getBonusActions().forEach(function (bonusAction) {
