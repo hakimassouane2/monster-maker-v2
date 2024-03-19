@@ -1,5 +1,4 @@
 import Blueprint from "../classes/blueprint.js";
-import Helpers from "../helpers.js";
 import Component from "./Component.js";
 
 /**
@@ -158,9 +157,10 @@ class BlueprintForm extends Component {
             let trait = this.data.traits.find((x) => x.id == $(checkbox).val());
             $("#blueprint-trait .card-body").append(
               Handlebars.templates["BlueprintFormTraitAction"]({
-                name: trait.role
-                  ? "(" + Helpers.capitalise(trait.role) + ") " + trait.name
-                  : trait.name,
+                // name: trait.role
+                //   ? "(" + Helpers.capitalise(trait.role) + ") " + trait.name
+                //   : trait.name,
+                name: trait.name,
                 rarity: trait.rarity,
                 type: trait.type,
                 detail: trait.description,
@@ -210,12 +210,7 @@ class BlueprintForm extends Component {
             );
             $("#blueprint-free-action .card-body").append(
               Handlebars.templates["BlueprintFormTraitAction"]({
-                name: freeAction.role
-                  ? "(" +
-                    Helpers.capitalise(freeAction.role) +
-                    ") " +
-                    freeAction.name
-                  : freeAction.name,
+                name: freeAction.name,
                 rarity: freeAction.rarity,
                 type: freeAction.type,
                 detail: freeAction.description,
@@ -265,12 +260,7 @@ class BlueprintForm extends Component {
             );
             $("#blueprint-bonus-action .card-body").append(
               Handlebars.templates["BlueprintFormTraitAction"]({
-                name: bonusAction.role
-                  ? "(" +
-                    Helpers.capitalise(bonusAction.role) +
-                    ") " +
-                    bonusAction.name
-                  : bonusAction.name,
+                name: bonusAction.name,
                 rarity: bonusAction.rarity,
                 type: bonusAction.type,
                 detail: bonusAction.description,
@@ -312,9 +302,7 @@ class BlueprintForm extends Component {
             );
             $("#blueprint-action .card-body").append(
               Handlebars.templates["BlueprintFormTraitAction"]({
-                name: action.role
-                  ? "(" + Helpers.capitalise(action.role) + ") " + action.name
-                  : action.name,
+                name: action.name,
                 rarity: action.rarity,
                 type: action.type,
                 detail: action.description,
