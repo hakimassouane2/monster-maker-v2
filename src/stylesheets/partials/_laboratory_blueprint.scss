@@ -356,14 +356,14 @@
 }
 
 #modal-blueprint-free-actions .modal-body {
-  &:not([filter="any"]) .trait.any,
-  &:not([filter="controller"]) .trait.controller,
-  &:not([filter="defender"]) .trait.defender,
-  &:not([filter="lurker"]) .trait.lurker,
-  &:not([filter="striker"]) .trait.striker,
-  &:not([filter="supporter"]) .trait.supporter,
-  &:not([filter="sniper"]) .trait.sniper,
-  &:not([filter="scout"]) .trait.scout {
+  &:not([filter="any"]) .free-action.any,
+  &:not([filter="controller"]) .free-action.controller,
+  &:not([filter="defender"]) .free-action.defender,
+  &:not([filter="lurker"]) .free-action.lurker,
+  &:not([filter="striker"]) .free-action.striker,
+  &:not([filter="supporter"]) .free-action.supporter,
+  &:not([filter="sniper"]) .free-action.sniper,
+  &:not([filter="scout"]) .free-action.scout {
     display: none;
   }
 
@@ -410,14 +410,14 @@
 }
 
 #modal-blueprint-bonus-actions .modal-body {
-  &:not([filter="any"]) .trait.any,
-  &:not([filter="controller"]) .trait.controller,
-  &:not([filter="defender"]) .trait.defender,
-  &:not([filter="lurker"]) .trait.lurker,
-  &:not([filter="striker"]) .trait.striker,
-  &:not([filter="supporter"]) .trait.supporter,
-  &:not([filter="sniper"]) .trait.sniper,
-  &:not([filter="scout"]) .trait.scout {
+  &:not([filter="any"]) .bonus-action.any,
+  &:not([filter="controller"]) .bonus-action.controller,
+  &:not([filter="defender"]) .bonus-action.defender,
+  &:not([filter="lurker"]) .bonus-action.lurker,
+  &:not([filter="striker"]) .bonus-action.striker,
+  &:not([filter="supporter"]) .bonus-action.supporter,
+  &:not([filter="sniper"]) .bonus-action.sniper,
+  &:not([filter="scout"]) .bonus-action.scout {
     display: none;
   }
 
@@ -464,14 +464,68 @@
 }
 
 #modal-blueprint-actions .modal-body {
-  &:not([filter="any"]) .trait.any,
-  &:not([filter="controller"]) .trait.controller,
-  &:not([filter="defender"]) .trait.defender,
-  &:not([filter="lurker"]) .trait.lurker,
-  &:not([filter="striker"]) .trait.striker,
-  &:not([filter="supporter"]) .trait.supporter,
-  &:not([filter="sniper"]) .trait.sniper,
-  &:not([filter="scout"]) .trait.scout {
+  &:not([filter="any"]) .action.any,
+  &:not([filter="controller"]) .action.controller,
+  &:not([filter="defender"]) .action.defender,
+  &:not([filter="lurker"]) .action.lurker,
+  &:not([filter="striker"]) .action.striker,
+  &:not([filter="supporter"]) .action.supporter,
+  &:not([filter="sniper"]) .action.sniper,
+  &:not([filter="scout"]) .action.scout {
+    display: none;
+  }
+
+  select {
+    margin-bottom: $spacing-lg;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    .title {
+      margin: 0;
+    }
+
+    .description {
+      font-size: small;
+      margin: 0;
+    }
+  }
+
+  .form-check:hover {
+    background: #eef0f2;
+    margin-left: -$spacing-lg;
+    margin-right: -$spacing-lg;
+    padding-left: $spacing-lg * 2;
+    padding-right: $spacing-lg;
+  }
+
+  .form-check-label {
+    cursor: pointer;
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-sm;
+    width: 100%;
+  }
+
+  .form-check-input {
+    top: $spacing-sm;
+
+    &:checked ~ label {
+      color: $theme-primary;
+    }
+  }
+}
+
+#modal-blueprint-reactions .modal-body {
+  &:not([filter="any"]) .reaction.any,
+  &:not([filter="controller"]) .reaction.controller,
+  &:not([filter="defender"]) .reaction.defender,
+  &:not([filter="lurker"]) .reaction.lurker,
+  &:not([filter="striker"]) .reaction.striker,
+  &:not([filter="supporter"]) .reaction.supporter,
+  &:not([filter="sniper"]) .reaction.sniper,
+  &:not([filter="scout"]) .reaction.scout {
     display: none;
   }
 
