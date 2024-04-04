@@ -199,7 +199,7 @@ const Helpers = (function () {
     Handlebars.registerHelper("fmtFormatSkill", function (text) {
       let skillMap = {
         acrobatics: "Acrobaties",
-        animalHandling: "Dressage",
+        "animal handling": "Dressage",
         arcana: "Arcanes",
         athletics: "Athlétisme",
         deception: "Tromperie",
@@ -213,7 +213,7 @@ const Helpers = (function () {
         performance: "Performance",
         persuasion: "Persuasion",
         religion: "Religion",
-        sleightOfHand: "Escamotage",
+        "sleight of hand": "Escamotage",
         stealth: "Discrétion",
         survival: "Survie",
       };
