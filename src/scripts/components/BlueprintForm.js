@@ -318,6 +318,52 @@ class BlueprintForm extends Component {
       }.bind(this)
     );
 
+    // Change the reaction filter
+    $(this.el).on("change", "#modal-blueprint-reactions select", function () {
+      $(this).closest(".modal-body").attr("filter", $(this).val());
+    });
+
+    $(this.el).on(
+      "hidden.bs.modal",
+      "#modal-blueprint-reactions",
+      function (e) {
+        $("#modal-blueprint-reactions select").val("any");
+        $("#modal-blueprint-reactions select").trigger("change");
+        $("#modal-blueprint-reactions .form-check-input:checked").prop(
+          "checked",
+          false
+        );
+      }
+    );
+
+    // Add selected reactions to laboratory blueprint
+    $(this.el).on(
+      "click",
+      "#modal-blueprint-reactions .btn-confirm",
+      function (e) {
+        $("#modal-blueprint-reactions .form-check-input:checked").each(
+          function (index, checkbox) {
+            let reaction = this.data.reactions.find(
+              (x) => x.id == $(checkbox).val()
+            );
+            $("#blueprint-reaction .card-body").append(
+              Handlebars.templates["BlueprintFormTraitAction"]({
+                name: reaction.name,
+                rarity: reaction.rarity,
+                type: reaction.type,
+                detail: reaction.description,
+              })
+            );
+          }.bind(this)
+        );
+        this.updateRepeatableFieldNames(
+          $("#blueprint-reaction").closest(".repeatable-section")
+        );
+        $(this.el + " form").change();
+        $("#modal-blueprint-reactions .close").click();
+      }.bind(this)
+    );
+
     $(this.el).on("click", ".btn-open-settings", function (e) {
       $("#modal-blueprint-help-theme").one("hidden.bs.modal", function () {
         $("#modal-settings").modal("show");

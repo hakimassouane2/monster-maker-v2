@@ -4,6 +4,7 @@ import DEFAULT_ACTIONS from "./consts/default_actions.js";
 import DEFAULT_BONUS_ACTIONS from "./consts/default_bonus_actions.js";
 import DEFAULT_FREE_ACTIONS from "./consts/default_free_actions.js";
 import DEFAULT_RANKS from "./consts/default_ranks.js";
+import DEFAULT_REACTIONS from "./consts/default_reactions.js";
 import DEFAULT_ROLES from "./consts/default_roles.js";
 import DEFAULT_TRAITS from "./consts/default_traits.js";
 
@@ -19,6 +20,7 @@ const Storage = (function () {
       ranks: getDefaultRanks(),
       traits: getDefaultTraits(),
       freeActions: getDefaultFreeActions(),
+      reactions: getDefaultReactions(),
       bonusActions: getDefaultBonusActions(),
       actions: getDefaultActions(),
     },
@@ -133,6 +135,13 @@ const Storage = (function () {
    */
   function getDefaultFreeActions() {
     return DEFAULT_FREE_ACTIONS;
+  }
+
+  /**
+   * Get the default monster reactions.
+   */
+  function getDefaultReactions() {
+    return DEFAULT_REACTIONS;
   }
 
   /**
@@ -284,6 +293,20 @@ const Storage = (function () {
    */
   function getFreeAction(id) {
     return data.fragments.freeActions.find((x) => x.id == id);
+  }
+
+  /**
+   * Gets the reaction fragments.
+   */
+  function getReactions() {
+    return data.fragments.reactions;
+  }
+
+  /**
+   * Gets a specific reaction fragment.
+   */
+  function getReaction(id) {
+    return data.fragments.reactions.find((x) => x.id == id);
   }
 
   /**
@@ -450,6 +473,8 @@ const Storage = (function () {
     getTrait: getTrait,
     getFreeActions: getFreeActions,
     getFreeAction: getFreeAction,
+    getReactions: getReactions,
+    getReaction: getReaction,
     getBonusActions: getBonusActions,
     getBonusAction: getBonusAction,
     getActions: getActions,

@@ -40,6 +40,9 @@ class PanelLaboratory extends Component {
         actions: Storage.getActions().sort((a, b) =>
           a.name.localeCompare(b.name)
         ),
+        reactions: Storage.getReactions().sort((a, b) =>
+          a.name.localeCompare(b.name)
+        ),
       },
     });
     this.children["preview"] = new MonsterPreview({
