@@ -130,3 +130,17 @@ C: Snipe: (Action, Common) Attack a target. Hit: If the target is unaware of you
 D: Poisoned Ammunition: (Bonus Action, Uncommon, Concentration) Until the effect ends, your ranged weapon attacks deal an additional 1d4 poison damage.
 
 E: Evasive Maneuvers: (Reaction, Common) When an enemy misses you with a ranged attack, you can move up to half your speed in any direction.
+
+// Pour les extraction de techniques giffy pdf
+
+I'm going to give you a text, from this text you will extract and order the data in different groups based on the type of action (Action, Bonus Action, Free etc). For each groups you will fill the following json for each of the techniques
+
+{
+id: ,
+name: "", In the same case but convert the name in french
+rarity: "", // In all lower case and in english
+description: "", // In the same case but convert the description to french
+role: "defender", // keep this exactly the same for all of them
+},
+
+Here is the text :
