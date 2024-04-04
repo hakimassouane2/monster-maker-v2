@@ -820,7 +820,7 @@ const Frankenstein = (function () {
         );
         output = output.replace(
           /(.*?)(\bdc-primary\b)(.*?)/g,
-          "DC $1" + monster.getDcPrimary() + "$3"
+          "DD $1" + monster.getDcPrimary() + "$3"
         );
         output = output.replace(
           /\bdc-secondary-bonus\b/g,
@@ -828,7 +828,7 @@ const Frankenstein = (function () {
         );
         output = output.replace(
           /(.*?)(\bdc-secondary\b)(.*?)/g,
-          "DC $1" + monster.getDcSecondary() + "$3"
+          "DD $1" + monster.getDcSecondary() + "$3"
         );
       }
 
