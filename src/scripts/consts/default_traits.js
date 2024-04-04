@@ -298,7 +298,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Aura : Dégats",
     description:
-      "L'espace qui vous entoure est dangereux. Les créatures subissent des dégâts égaux à votre niveau lorsqu'elles pénètrent dans votre aura ou commencent leur tour à l'intérieur de celle-ci.",
+      "L'espace qui vous entoure est dangereux. Les créatures subissent des dégâts égaux à votre niveau ([level]) lorsqu'elles pénètrent dans votre aura ou commencent leur tour à l'intérieur de celle-ci.",
   },
   {
     id: 43,
@@ -312,7 +312,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Aura : Enchevêtrement",
     description:
-      "Le sol dans un rayon de 10 ft autour de vous est un terrain difficile. Chaque créature qui commence son tour dans cette zone doit réussir un jet de sauvegarde de Force ou voir sa vitesse réduite à 0 jusqu'au début de son prochain tour.",
+      "Le sol dans un rayon de 10 ft autour de vous est un terrain difficile. Chaque créature qui commence son tour dans cette zone doit réussir un jet de sauvegarde de Force [dc-primary] ou voir sa vitesse réduite à 0 jusqu'au début de son prochain tour.",
   },
   {
     id: 45,
@@ -326,7 +326,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Peau barbelée",
     description:
-      "Au début de votre tour, infligez des dégâts perforants égaux à votre niveau à toute créature qui vous agrippe.",
+      "Au début de votre tour, infligez des dégâts perforants égaux à votre niveau ([level]) à toute créature qui vous agrippe.",
   },
   {
     id: 47,
@@ -340,7 +340,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Charger",
     description:
-      "Si vous vous êtes déplacé de plus de 20 ft en ligne droite vers votre cible, faites votre jet d'attaque de mêlée avec l'avantage. En cas de succès, vous mettez votre cible à plat ventre, en plus de tout autre effet",
+      "Si vous vous êtes déplacé de plus de 20ft. en ligne droite vers votre cible, faites votre jet d'attaque de mêlée avec l'avantage. En cas de succès, vous mettez votre cible à plat ventre, en plus de tout autre effet",
   },
   {
     id: 49,
@@ -388,7 +388,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Corps dangereux",
     description:
-      "Tout ennemi qui vous touche ou vous frappe avec une attaque de mêlée à moins de 5 ft de vous subit des dégâts égaux à votre niveau",
+      "Tout ennemi qui vous touche ou vous frappe avec une attaque de mêlée à moins de 5ft de vous subit des dégâts égaux à votre niveau ([level])",
   },
   {
     id: 56,
