@@ -76,6 +76,64 @@ const DEFAULT_BONUS_ACTIONS = [
       "Tout ennemi qui commence son tour à l'intérieur ou qui se déplace dans votre portée subit des dégâts égaux à votre niveau de combat (une fois par tour).",
     role: "defender",
   },
+  // Striker
+  {
+    id: 9,
+    name: "Aggression",
+    rarity: "uncommon",
+    description:
+      "Jusq'à la fin de votre prochain tour votre zone de critique augmente de +1. De plus vous effectuez votre prochain jet d'attaque avec avantage.",
+    role: "striker",
+  },
+  {
+    id: 10,
+    name: "Visée précise",
+    rarity: "common",
+    description:
+      "Nécessite : Vous ne pouvez pas vous déplacer pendant ce tour. Effet : Vous gagnez l'avantage sur votre prochain jet d'attaque.",
+    role: "striker",
+  },
+  {
+    id: 11,
+    name: "Extra Chanceux (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Si le résultat de votre jet d'attaque est de 1 ou 2, vous pouvez relancer le dé. Vous devez utiliser le nouveau résultat.",
+    role: "striker",
+  },
+  {
+    id: 12,
+    name: "Recharge rapide",
+    rarity: "uncommon",
+    description:
+      "Choissisez une capacité qui nécessite un temps de recharge et a) réduisez le temps de recharge de 1 b) faites un jet de recharge c) regagnez une charge.",
+    role: "striker",
+  },
+  // Supporter
+  {
+    id: 13,
+    name: "Enchanter (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Choissisez des alliés parmis une zone. Effet : Les alliés choisis peuvent changer leur type de dégats vers celui que vous décider.",
+    role: "supporter",
+  },
+  {
+    id: 14,
+    name: "Hâte (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Choissisez un allié. Effet : L'allié choisi gagne 10ft. de mouvement",
+    role: "supporter",
+  },
+  {
+    id: 14,
+    name: "Rechargeur",
+    rarity: "rare",
+    description:
+      "Choissisez un allié. Effet : L'allié choisi recharge immédiatement l'une de ses capacités peu communes épuisées.",
+    role: "supporter",
+  },
 ];
 
 export default DEFAULT_BONUS_ACTIONS;

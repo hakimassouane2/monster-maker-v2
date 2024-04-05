@@ -19,6 +19,15 @@ const DEFAULT_FREE_ACTIONS = [
       "Requiert : Vous avez touché une cible avec une attaque d'opportunité. Effet : La cible tombe à terre.",
     role: "defender",
   },
+  // Striker
+  {
+    id: 2,
+    name: "Reliable Attacker",
+    rarity: "uncommon",
+    description:
+      "Quand vous faites un jet d'attaquem vous pouvez traiter le résultat comme un 11. Vous pouvez décider de le faire après avoir vu le résultat du jet.",
+    role: "striker",
+  },
 ];
 
 export default DEFAULT_FREE_ACTIONS;

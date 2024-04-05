@@ -19,6 +19,24 @@ const DEFAULT_REACTIONS = [
       "Quand un allié à proximité est attaqué, vous pouvez vous déplacer jusqu'à la moitié de votre vitesse vers cet allié.",
     role: "defender",
   },
+  // Striker
+  {
+    id: 2,
+    name: "Essaye Encore",
+    rarity: "common",
+    description:
+      "Nécessite : Vous ratez une attaque de 1, 2 ou 3. Effet : Relancer le dé d'attaque, vous devez utiliser le nouveau résultat.",
+    role: "striker",
+  },
+  // Supporter
+  {
+    id: 2,
+    name: "Pas comme ça",
+    rarity: "uncommon",
+    description:
+      "Quand un allié rate une attaque, il peut relancer le jet d'attaque avec avantage.",
+    role: "supporter",
+  },
 ];
 
 export default DEFAULT_REACTIONS;
