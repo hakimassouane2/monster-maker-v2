@@ -108,35 +108,35 @@ const DEFAULT_TRAITS = [
   },
   {
     id: 15,
-    role: "sniper",
+    role: "striker",
     name: "Ne bougez pas",
     description:
       "Vous avez l'avantage sur les jets d'attaque lorsque votre cible s'est déplacée de moins de 15 ft lors de son dernier tour",
   },
   {
     id: 16,
-    role: "sniper",
+    role: "striker",
     name: "Je te vois",
     description:
       "Vos attaques à distance ignorent la demi-couverture et la couverture aux trois quarts",
   },
   {
     id: 17,
-    role: "sniper",
+    role: "striker",
     name: "La prochaine fois",
     description:
       "Si vous manquez une cible, vous avez l'avantage sur votre prochaine attaque contre cette même cible",
   },
   {
     id: 18,
-    role: "sniper",
+    role: "striker",
     name: "Tir en rafale",
     description:
       "Lorsque vous réussissez une attaque, vous pouvez infliger des dégâts égaux à votre niveau à toute personne se trouvant à moins de 5 ft de votre cible (une fois par round)",
   },
   {
     id: 19,
-    role: "sniper",
+    role: "striker",
     name: "Ricochet",
     description:
       "Si votre attaque rate, vous pouvez dépenser votre réaction pour effectuer une autre attaque contre une cible différente de votre choix dans un rayon de 15 ft de la cible initiale",
@@ -178,35 +178,35 @@ const DEFAULT_TRAITS = [
   },
   {
     id: 25,
-    role: "scout",
+    role: "skirmisher",
     name: "Vous ne pouvez pas vous cacher",
     description:
       "Vous avez un avantage lorsque vous essayez de détecter des ennemis cachés. Tout ennemi que vous pouvez voir est également visible par vos alliés",
   },
   {
     id: 26,
-    role: "scout",
+    role: "skirmisher",
     name: "Pieds légers",
     description:
       "Vous pouvez vous désengager ou foncer en tant qu'action bonus. Lorsqu'un ennemi se déplace à proximité de vous, vous pouvez dépenser votre réaction pour vous éloigner de la moitié de votre vitesse",
   },
   {
     id: 27,
-    role: "scout",
+    role: "skirmisher",
     name: "Explorateur",
     description:
       "Vous pouvez grimper et vous déplacer en terrain difficile sans pénalité de mouvement",
   },
   {
     id: 28,
-    role: "scout",
+    role: "skirmisher",
     name: "Opportuniste",
     description:
       "Lorsqu'un allié se déplace à proximité d'un ennemi, vous pouvez dépenser votre réaction pour vous déplacer de votre vitesse vers ce même ennemi",
   },
   {
     id: 29,
-    role: "scout",
+    role: "skirmisher",
     name: "Dur à frapper",
     description:
       "Lorsque vous êtes debout et non immobilisé, les attaques contre vous ont un désavantage sauf si vous êtes adjacent à deux ennemis ou plus",

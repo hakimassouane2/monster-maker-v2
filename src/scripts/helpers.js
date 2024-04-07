@@ -188,8 +188,7 @@ const Helpers = (function () {
         controller: "Contrôleur",
         defender: "Défenseur",
         lurker: "Rôdeur",
-        scout: "Éclaireur",
-        sniper: "Sniper",
+        skirmisher: "Éclaireur",
         striker: "Assaillant",
         supporter: "Soutien",
       };

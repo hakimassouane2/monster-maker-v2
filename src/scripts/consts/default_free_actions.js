@@ -16,12 +16,12 @@ const DEFAULT_FREE_ACTIONS = [
     name: "Croche-patte",
     rarity: "common",
     description:
-      "Requiert : Vous avez touché une cible avec une attaque d'opportunité. Effet : La cible tombe à terre.",
+      "Requiert : Vous touchez une cible avec une attaque d'opportunité. Effet : La cible tombe à terre.",
     role: "defender",
   },
   // Lurker
   {
-    id: 1,
+    id: 2,
     name: "Touché de la mort",
     rarity: "uncommon",
     description:
@@ -29,7 +29,7 @@ const DEFAULT_FREE_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 1,
+    id: 3,
     name: "Marqué par la mort (Concentration)",
     rarity: "uncommon",
     description:
@@ -37,7 +37,7 @@ const DEFAULT_FREE_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 1,
+    id: 4,
     name: "Choc systèmique",
     rarity: "uncommon",
     description:
@@ -62,8 +62,8 @@ const DEFAULT_FREE_ACTIONS = [
   },
   // Striker
   {
-    id: 2,
-    name: "Reliable Attacker",
+    id: 7,
+    name: "Attaquant fiable",
     rarity: "uncommon",
     description:
       "Quand vous faites un jet d'attaquem vous pouvez traiter le résultat comme un 11. Vous pouvez décider de le faire après avoir vu le résultat du jet.",

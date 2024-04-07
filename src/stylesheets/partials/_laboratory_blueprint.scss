@@ -308,8 +308,7 @@
   &:not([filter="lurker"]) .trait.lurker,
   &:not([filter="striker"]) .trait.striker,
   &:not([filter="supporter"]) .trait.supporter,
-  &:not([filter="sniper"]) .trait.sniper,
-  &:not([filter="scout"]) .trait.scout {
+  &:not([filter="skirmisher"]) .trait.skirmisher {
     display: none;
   }
 
@@ -362,8 +361,7 @@
   &:not([filter="lurker"]) .free-action.lurker,
   &:not([filter="striker"]) .free-action.striker,
   &:not([filter="supporter"]) .free-action.supporter,
-  &:not([filter="sniper"]) .free-action.sniper,
-  &:not([filter="scout"]) .free-action.scout {
+  &:not([filter="skirmisher"]) .free-action.skirmisher {
     display: none;
   }
 
@@ -416,8 +414,7 @@
   &:not([filter="lurker"]) .bonus-action.lurker,
   &:not([filter="striker"]) .bonus-action.striker,
   &:not([filter="supporter"]) .bonus-action.supporter,
-  &:not([filter="sniper"]) .bonus-action.sniper,
-  &:not([filter="scout"]) .bonus-action.scout {
+  &:not([filter="skirmisher"]) .bonus-action.skirmisher {
     display: none;
   }
 
@@ -470,8 +467,7 @@
   &:not([filter="lurker"]) .action.lurker,
   &:not([filter="striker"]) .action.striker,
   &:not([filter="supporter"]) .action.supporter,
-  &:not([filter="sniper"]) .action.sniper,
-  &:not([filter="scout"]) .action.scout {
+  &:not([filter="skirmisher"]) .action.skirmisher {
     display: none;
   }
 
@@ -524,8 +520,7 @@
   &:not([filter="lurker"]) .reaction.lurker,
   &:not([filter="striker"]) .reaction.striker,
   &:not([filter="supporter"]) .reaction.supporter,
-  &:not([filter="sniper"]) .reaction.sniper,
-  &:not([filter="scout"]) .reaction.scout {
+  &:not([filter="skirmisher"]) .reaction.skirmisher {
     display: none;
   }
 

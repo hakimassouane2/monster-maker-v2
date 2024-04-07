@@ -363,13 +363,6 @@ class BlueprintForm extends Component {
         $("#modal-blueprint-reactions .close").click();
       }.bind(this)
     );
-
-    $(this.el).on("click", ".btn-open-settings", function (e) {
-      $("#modal-blueprint-help-theme").one("hidden.bs.modal", function () {
-        $("#modal-settings").modal("show");
-      });
-      $("#modal-blueprint-help-theme").modal("hide");
-    });
   }
 
   /**

@@ -40,9 +40,8 @@
 							<option value="striker" {{selected blueprint.description.role "striker"}}>Assaillant</option>
 							<option value="controller" {{selected blueprint.description.role "controller"}}>Contrôleur</option>
 							<option value="defender" {{selected blueprint.description.role "defender"}}>Défenseur</option>
-							<option value="scout" {{selected blueprint.description.role "scout"}}>Éclaireur</option>
+							<option value="skirmisher" {{selected blueprint.description.role "skirmisher"}}>Éclaireur</option>
 							<option value="lurker" {{selected blueprint.description.role "lurker"}}>Rôdeur</option>
-							<option value="sniper" {{selected blueprint.description.role "sniper"}}>Sniper</option>
 							<option value="supporter" {{selected blueprint.description.role "supporter"}}>Soutien</option>
 						</select>
 					</div>
@@ -902,7 +901,7 @@
 						</div>
 					</div>
 					<button type="button" class="btn btn-sm btn-secondary btn-add manual-only">
-						<span class="fas fa-plus"></span> Ajouter une réaction
+						<span class="fas fa-plus"></span> Ajouter une Réaction
 					</button>
 				</div>
 			</div>
@@ -919,9 +918,9 @@
 					<div class="form-group">
 						<label>Actions</label>
 						<select class="form-control custom-toggle" name="paragonActions.type">
-							<option value="custom" {{selected blueprint.paragonActions.type "custom"}}>Custom</option>
-							<option value="default" {{selected blueprint.paragonActions.type "default"}}>Default</option>
-							<option value="none" {{selected blueprint.paragonActions.type "none"}}>None</option>
+							<option value="custom" {{selected blueprint.paragonActions.type "custom"}}>Personnalisé</option>
+							<option value="default" {{selected blueprint.paragonActions.type "default"}}>Par défaut</option>
+							<option value="none" {{selected blueprint.paragonActions.type "none"}}>Aucune</option>
 						</select>
 					</div>
 					<div class="form-group custom" {{{customToggle blueprint.paragonActions.type}}}>
@@ -1167,8 +1166,7 @@
 					<option value="controller">Contrôleur</option>
 					<option value="defender">Défenseur</option>
 					<option value="lurker">Rôdeur</option>
-					<option value="scout">Éclaireur</option>
-					<option value="sniper">Sniper</option>
+					<option value="skirmisher">Éclaireur</option>
 					<option value="striker">Assaillant</option>
 					<option value="supporter">Soutien</option>
 				</select>
@@ -1214,8 +1212,7 @@
 					<option value="controller">Contrôleur</option>
 					<option value="defender">Défenseur</option>
 					<option value="lurker">Rôdeur</option>
-					<option value="scout">Éclaireur</option>
-					<option value="sniper">Sniper</option>
+					<option value="skirmisher">Éclaireur</option>
 					<option value="striker">Assaillant</option>
 					<option value="supporter">Soutien</option>
 				</select>
@@ -1261,8 +1258,7 @@
 					<option value="controller">Contrôleur</option>
 					<option value="defender">Défenseur</option>
 					<option value="lurker">Rôdeur</option>
-					<option value="scout">Éclaireur</option>
-					<option value="sniper">Sniper</option>
+					<option value="skirmisher">Éclaireur</option>
 					<option value="striker">Assaillant</option>
 					<option value="supporter">Soutien</option>
 				</select>
@@ -1308,8 +1304,7 @@
 					<option value="controller">Contrôleur</option>
 					<option value="defender">Défenseur</option>
 					<option value="lurker">Rôdeur</option>
-					<option value="scout">Éclaireur</option>
-					<option value="sniper">Sniper</option>
+					<option value="skirmisher">Éclaireur</option>
 					<option value="striker">Assaillant</option>
 					<option value="supporter">Soutien</option>
 				</select>
@@ -1355,14 +1350,13 @@
 					<option value="controller">Contrôleur</option>
 					<option value="defender">Défenseur</option>
 					<option value="lurker">Rôdeur</option>
-					<option value="scout">Éclaireur</option>
-					<option value="sniper">Sniper</option>
+					<option value="skirmisher">Éclaireur</option>
 					<option value="striker">Assaillant</option>
 					<option value="supporter">Soutien</option>
 				</select>
 				<ul>
 					{{#each reactions}}
-						<li class="reactions {{#if role}}{{role}}{{/if}}{{#unless role}}any{{/unless}}">
+						<li class="reaction {{#if role}}{{role}}{{/if}}{{#unless role}}any{{/unless}}">
 							<div class="form-check">
 							  <input class="form-check-input" type="checkbox" value="{{id}}" id="reaction-{{id}}">
 							  <label class="form-check-label" for="reaction-{{id}}">

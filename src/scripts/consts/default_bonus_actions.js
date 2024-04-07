@@ -84,9 +84,88 @@ const DEFAULT_BONUS_ACTIONS = [
       "Tout ennemi qui commence son tour à l'intérieur ou qui se déplace dans votre portée subit des dégâts égaux à votre niveau de combat (une fois par tour).",
     role: "defender",
   },
+  // Skirmisher
+  {
+    id: 10,
+    name: "Toujours De Service (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Vous ne pouvez pas être surpris et les créatures cachées ne bénéficient pas d'un avantage aux jets d'attaque contre vous.",
+    role: "skirmisher",
+  },
+  {
+    id: 11,
+    name: "Vue Au-Delà de la Vue",
+    rarity: "uncommon",
+    description:
+      "Vous obtenez une vision aveugle de 60ft. jusqu'à la fin de votre prochain tour.",
+    role: "skirmisher",
+  },
+  {
+    id: 12,
+    name: "Vibrations Subtiles",
+    rarity: "uncommon",
+    description: "Vous obtenez une sensibilité aux vibrations de 30ft.",
+    role: "skirmisher",
+  },
+  {
+    id: 13,
+    name: "Délocalisation (Concentration)",
+    rarity: "rare",
+    description:
+      "Vous êtes banni. Lorsque l'effet prend fin, vous réapparaissez dans un espace inoccupé dans un rayon de 30ft. ",
+    role: "skirmisher",
+  },
+  {
+    id: 14,
+    name: "Invisible",
+    rarity: "rare",
+    description:
+      "Jusqu'à la fin de votre prochain tour, vous êtes invisible. Cet effet prend fin si vous attaquez ou lancez un sort.",
+    role: "skirmisher",
+  },
+  {
+    id: 15,
+    name: "Fonceur",
+    rarity: "uncommon",
+    description: "Vous effectuez l'action 'Foncer'.",
+    role: "skirmisher",
+  },
+  {
+    id: 16,
+    name: "Liberté",
+    rarity: "common",
+    description:
+      "Vous ne subissez aucune pénalité de déplacement lorsque vous vous faufilez dans un espace étroit.",
+    role: "skirmisher",
+  },
+  {
+    id: 17,
+    name: "Grimpette d'Araignée (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Vous pouvez grimper sur des surfaces difficiles, y compris à l'envers sur les plafonds, sans avoir besoin de faire de jet de compétence.",
+    role: "skirmisher",
+  },
+  {
+    id: 18,
+    name: "Serpent Liquide (Concentration)",
+    rarity: "common",
+    description:
+      "Vous pouvez rester debout sur n'importe quelle surface liquide comme s'il s'agissait d'un sol solide inoffensif.",
+    role: "skirmisher",
+  },
+  {
+    id: 19,
+    name: "Volant (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Vous obtenez une vitesse de vol égale à la moitié de votre vitesse de déplacement standard.",
+    role: "skirmisher",
+  },
   // Lurker
   {
-    id: 9,
+    id: 20,
     name: "Plaies Perforantes",
     rarity: "uncommon",
     description:
@@ -94,7 +173,7 @@ const DEFAULT_BONUS_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 9,
+    id: 21,
     name: "Guerilla",
     rarity: "common",
     description:
@@ -102,7 +181,7 @@ const DEFAULT_BONUS_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 9,
+    id: 22,
     name: "Écran de fumée",
     rarity: "uncommon",
     description:
@@ -111,7 +190,7 @@ const DEFAULT_BONUS_ACTIONS = [
   },
   // Striker
   {
-    id: 9,
+    id: 23,
     name: "Aggression",
     rarity: "uncommon",
     description:
@@ -119,7 +198,7 @@ const DEFAULT_BONUS_ACTIONS = [
     role: "striker",
   },
   {
-    id: 10,
+    id: 24,
     name: "Visée précise",
     rarity: "common",
     description:
@@ -127,7 +206,7 @@ const DEFAULT_BONUS_ACTIONS = [
     role: "striker",
   },
   {
-    id: 11,
+    id: 25,
     name: "Extra Chanceux (Concentration)",
     rarity: "uncommon",
     description:
@@ -135,7 +214,7 @@ const DEFAULT_BONUS_ACTIONS = [
     role: "striker",
   },
   {
-    id: 12,
+    id: 26,
     name: "Recharge rapide",
     rarity: "uncommon",
     description:
@@ -144,7 +223,7 @@ const DEFAULT_BONUS_ACTIONS = [
   },
   // Supporter
   {
-    id: 13,
+    id: 27,
     name: "Enchanter (Concentration)",
     rarity: "uncommon",
     description:
@@ -152,7 +231,7 @@ const DEFAULT_BONUS_ACTIONS = [
     role: "supporter",
   },
   {
-    id: 14,
+    id: 28,
     name: "Hâte (Concentration)",
     rarity: "uncommon",
     description:
@@ -160,7 +239,7 @@ const DEFAULT_BONUS_ACTIONS = [
     role: "supporter",
   },
   {
-    id: 14,
+    id: 29,
     name: "Rechargeur",
     rarity: "rare",
     description:

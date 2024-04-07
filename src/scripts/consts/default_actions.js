@@ -140,7 +140,7 @@ const DEFAULT_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 19,
+    id: 17,
     name: "Reste à terre",
     rarity: "common",
     description:
@@ -148,7 +148,7 @@ const DEFAULT_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 19,
+    id: 18,
     name: "Saut d'effroi",
     rarity: "common",
     description:
@@ -156,7 +156,7 @@ const DEFAULT_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 17,
+    id: 19,
     name: "Point de Pression",
     rarity: "uncommon",
     description:
@@ -164,7 +164,7 @@ const DEFAULT_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 18,
+    id: 20,
     name: "Disparition (Concentration)",
     rarity: "rare",
     description:
@@ -172,7 +172,7 @@ const DEFAULT_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 18,
+    id: 21,
     name: "Camouflage",
     rarity: "uncommon",
     description:
@@ -180,7 +180,7 @@ const DEFAULT_ACTIONS = [
     role: "lurker",
   },
   {
-    id: 18,
+    id: 22,
     name: "Bombe Éclair",
     rarity: "uncommon",
     description:
@@ -188,9 +188,17 @@ const DEFAULT_ACTIONS = [
     role: "lurker",
   },
   // Skrimishers
+  {
+    id: 23,
+    name: "Signal lumineux",
+    rarity: "uncommon",
+    description:
+      "Attaquez une cible. Touché : La cible est signalée par une aura de lumière tamisée jusqu'à la fin de votre prochain tour. Tant qu'elle est signalée, les jets d'attaque contre la cible ont l'avantage (si l'attaquant peut la voir), et la cible ne peut pas devenir invisible.",
+    role: "skirmisher",
+  },
   // Strikers
   {
-    id: 1,
+    id: 24,
     name: "Attaque Brutale",
     rarity: "rare",
     description:
@@ -198,7 +206,7 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   {
-    id: 2,
+    id: 25,
     name: "Déchirement",
     rarity: "uncommon",
     description:
@@ -206,14 +214,14 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   {
-    id: 3,
+    id: 26,
     name: "Malédiction (Concentration)",
     rarity: "uncommon",
     description: "Attaque une cible. Touché : La cible subit 125% de dégâts.",
     role: "striker",
   },
   {
-    id: 4,
+    id: 27,
     name: "Saignement",
     rarity: "uncommon",
     description:
@@ -221,7 +229,7 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   {
-    id: 5,
+    id: 282,
     name: "Explosion",
     rarity: "uncommon",
     description:
@@ -229,7 +237,7 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   {
-    id: 5,
+    id: 29,
     name: "Oblivion",
     rarity: "rare",
     description:
@@ -237,7 +245,7 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   {
-    id: 6,
+    id: 30,
     name: "Magie du Vide",
     rarity: "uncommon",
     description:
@@ -245,7 +253,7 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   {
-    id: 7,
+    id: 31,
     name: "Destruction (Concentration)",
     rarity: "uncommon",
     description:
@@ -253,7 +261,7 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   {
-    id: 8,
+    id: 32,
     name: "Drain de Vie",
     rarity: "rare",
     description:
@@ -262,74 +270,84 @@ const DEFAULT_ACTIONS = [
   },
   // Supporters
   {
-    id: 1,
+    id: 33,
     name: "Férocité",
     rarity: "uncommon",
     description:
       "Choisissez des alliés dans une zone. Effet: Jusqu'à la fin de leur prochain tour, chaque allié augmente sa plage de coups critiques de +1 et peut relancer toute attaque qui est un 1 naturel.",
+    role: "supporter",
   },
   {
-    id: 2,
+    id: 34,
     name: "Perçant",
     rarity: "common",
     description:
       "Choisissez un allié. Effet: Jusqu'à la fin de son tour, les attaques de l'allié ignorent la résistance à un type de dégât et traitent l'immunité comme si c'était de la résistance.",
+    role: "supporter",
   },
   {
-    id: 7,
+    id: 35,
     name: "Commandant",
     rarity: "common",
     description:
       "Choisissez un allié. Effet: L'allié peut dépenser sa réaction pour effectuer une attaque de base contre une cible de votre choix.",
+    role: "supporter",
   },
   {
-    id: 8,
+    id: 36,
     name: "Échec et mat",
     rarity: "common",
     description:
       "Choisissez un allié. Effet: Vous déplacez l'allié de 10 pieds dans une direction de votre choix. Ce mouvement ne provoque pas d'attaques d'opportunité.",
+    role: "supporter",
   },
   {
-    id: 9,
+    id: 37,
     name: "Diriger l'attaque",
     rarity: "common",
     description:
       "Attaquez une cible. Effet: La créature est marquée jusqu'à la fin de votre prochain tour. Les alliés ont l'avantage sur leur premier jet d'attaque effectué contre la créature marquée.",
+    role: "supporter",
   },
   {
-    id: 13,
+    id: 38,
     name: "Téléportation de masse",
     rarity: "rare",
     description:
       "Choisissez des alliés dans une zone. Effet: Chaque allié est téléporté vers un espace non occupé de votre choix dans un rayon de 40 pieds de leur position d'origine.",
+    role: "supporter",
   },
   {
-    id: 11,
+    id: 39,
     name: "Purificateur",
     rarity: "common",
     description:
       "Choisissez un allié. Effet: L'allié peut relancer un jet de sauvegarde raté contre un effet en cours.",
+    role: "supporter",
   },
   {
-    id: 12,
+    id: 40,
     name: "Protecteur",
     rarity: "uncommon",
     description:
       "Choisissez un allié. Effet: L'allié gagne des points de vie temporaires égaux à trois fois ([level * 3]) votre niveau de combat.",
+    role: "supporter",
   },
   {
-    id: 14,
+    id: 41,
     name: "Guérisseur de masse",
     rarity: "rare",
     description:
       "Choisissez des alliés dans une zone. Effet: L'allié récupère des points de vie égaux à deux fois votre niveau de combat.",
+    role: "supporter",
   },
   {
-    id: 15,
+    id: 42,
     name: "Régénérateur",
     rarity: "rare",
     description:
       "Choisissez un allié. Effet: l'allié récupère des points de vie égaux à deux fois votre niveau de combat.",
+    role: "supporter",
   },
 ];
 
