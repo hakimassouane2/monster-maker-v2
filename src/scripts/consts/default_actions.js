@@ -261,6 +261,76 @@ const DEFAULT_ACTIONS = [
     role: "striker",
   },
   // Supporters
+  {
+    id: 1,
+    name: "Férocité",
+    rarity: "uncommon",
+    description:
+      "Choisissez des alliés dans une zone. Effet: Jusqu'à la fin de leur prochain tour, chaque allié augmente sa plage de coups critiques de +1 et peut relancer toute attaque qui est un 1 naturel.",
+  },
+  {
+    id: 2,
+    name: "Perçant",
+    rarity: "common",
+    description:
+      "Choisissez un allié. Effet: Jusqu'à la fin de son tour, les attaques de l'allié ignorent la résistance à un type de dégât et traitent l'immunité comme si c'était de la résistance.",
+  },
+  {
+    id: 7,
+    name: "Commandant",
+    rarity: "common",
+    description:
+      "Choisissez un allié. Effet: L'allié peut dépenser sa réaction pour effectuer une attaque de base contre une cible de votre choix.",
+  },
+  {
+    id: 8,
+    name: "Échec et mat",
+    rarity: "common",
+    description:
+      "Choisissez un allié. Effet: Vous déplacez l'allié de 10 pieds dans une direction de votre choix. Ce mouvement ne provoque pas d'attaques d'opportunité.",
+  },
+  {
+    id: 9,
+    name: "Diriger l'attaque",
+    rarity: "common",
+    description:
+      "Attaquez une cible. Effet: La créature est marquée jusqu'à la fin de votre prochain tour. Les alliés ont l'avantage sur leur premier jet d'attaque effectué contre la créature marquée.",
+  },
+  {
+    id: 13,
+    name: "Téléportation de masse",
+    rarity: "rare",
+    description:
+      "Choisissez des alliés dans une zone. Effet: Chaque allié est téléporté vers un espace non occupé de votre choix dans un rayon de 40 pieds de leur position d'origine.",
+  },
+  {
+    id: 11,
+    name: "Purificateur",
+    rarity: "common",
+    description:
+      "Choisissez un allié. Effet: L'allié peut relancer un jet de sauvegarde raté contre un effet en cours.",
+  },
+  {
+    id: 12,
+    name: "Protecteur",
+    rarity: "uncommon",
+    description:
+      "Choisissez un allié. Effet: L'allié gagne des points de vie temporaires égaux à trois fois ([level * 3]) votre niveau de combat.",
+  },
+  {
+    id: 14,
+    name: "Guérisseur de masse",
+    rarity: "rare",
+    description:
+      "Choisissez des alliés dans une zone. Effet: L'allié récupère des points de vie égaux à deux fois votre niveau de combat.",
+  },
+  {
+    id: 15,
+    name: "Régénérateur",
+    rarity: "rare",
+    description:
+      "Choisissez un allié. Effet: l'allié récupère des points de vie égaux à deux fois votre niveau de combat.",
+  },
 ];
 
 export default DEFAULT_ACTIONS;

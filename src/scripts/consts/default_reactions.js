@@ -37,6 +37,13 @@ const DEFAULT_REACTIONS = [
       "Quand un allié rate une attaque, il peut relancer le jet d'attaque avec avantage.",
     role: "supporter",
   },
+  {
+    id: 10,
+    name: "Pas sur ma guarde",
+    rarity: "rare",
+    description:
+      "Quand un allié serait réduit à 0 points de vie, vous le réduisez à 1 point de vie à la place.",
+  },
 ];
 
 export default DEFAULT_REACTIONS;
