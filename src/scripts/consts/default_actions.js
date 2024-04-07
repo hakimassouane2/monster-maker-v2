@@ -187,9 +187,79 @@ const DEFAULT_ACTIONS = [
       "Attaquez une zone. Réussite : la cible est aveuglée jusqu'à la fin de son prochain tour.",
     role: "lurker",
   },
-
   // Skrimishers
   // Strikers
+  {
+    id: 1,
+    name: "Attaque Brutale",
+    rarity: "rare",
+    description:
+      "Attaque une cible. Touché : La cible subit 200% de dégâts ([damage * 2]).",
+    role: "striker",
+  },
+  {
+    id: 2,
+    name: "Déchirement",
+    rarity: "uncommon",
+    description:
+      "Attaque une cible. Touché : La cible subit 125% ([damage * 1.25]) de dégâts continus .",
+    role: "striker",
+  },
+  {
+    id: 3,
+    name: "Malédiction (Concentration)",
+    rarity: "uncommon",
+    description: "Attaque une cible. Touché : La cible subit 125% de dégâts.",
+    role: "striker",
+  },
+  {
+    id: 4,
+    name: "Saignement",
+    rarity: "uncommon",
+    description:
+      "Attaque une cible. Touché : La cible perd un dé de vie (continu).",
+    role: "striker",
+  },
+  {
+    id: 5,
+    name: "Explosion",
+    rarity: "uncommon",
+    description:
+      "Attaque une zone. Touché : La cible subit 100% ([damage]) de dégâts. Raté : La cible subit 50% ([damage / 2]) de dégâts.",
+    role: "striker",
+  },
+  {
+    id: 5,
+    name: "Oblivion",
+    rarity: "rare",
+    description:
+      "Attaque une zone. Touché : La cible subit 175% ([damage * 1.75]) de dégâts.",
+    role: "striker",
+  },
+  {
+    id: 6,
+    name: "Magie du Vide",
+    rarity: "uncommon",
+    description:
+      "Attaque une zone. Touché : La cible perd son plus bas niveau de sort non utilisé.",
+    role: "striker",
+  },
+  {
+    id: 7,
+    name: "Destruction (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Attaque une zone. Touché : La cible subit 100% ([damage]) de dégâts.",
+    role: "striker",
+  },
+  {
+    id: 8,
+    name: "Drain de Vie",
+    rarity: "rare",
+    description:
+      "Attaque une zone. Touché : La cible gagne un niveau d'épuisement.",
+    role: "striker",
+  },
   // Supporters
 ];
 

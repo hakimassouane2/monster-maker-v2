@@ -133,14 +133,14 @@ E: Evasive Maneuvers: (Reaction, Common) When an enemy misses you with a ranged 
 
 // Pour les extraction de techniques giffy pdf
 
-I'm going to give you a text, from this text you will extract and order the data in different groups based on the type of action (Action, Bonus Action, Free etc). For each groups you will fill the following json for each of the techniques
+I'm going to give you a text, from this text you will extract the data. For each groups you will start by a H1 title with the name of the group (Action, Bonus Action, Free, Reaction) and fill the following json for each of the techniques. Follow strictly the indications of the json
 
 {
-id: ,
-name: "", In the same case but convert the name in french
+id: 1
+name: "", // In the same casing but translate the name to french language. It's very important that this should be translated to french language ABSOLUTELY
 rarity: "", // In all lower case and in english
-description: "", // In the same case but convert the description to french
-role: "defender", // keep this exactly the same for all of them
+description: "", // In the same casing but translate the description to french language
+role: "striker", // keep this exactly the same for all of them
 },
 
 Here is the text :
