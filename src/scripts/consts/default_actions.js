@@ -53,15 +53,15 @@ const DEFAULT_ACTIONS = [
   },
   {
     id: 6,
-    name: "Barrière",
+    name: "Barrière (Concentration)",
     rarity: "rare",
     description:
-      "Choisir une zone. Effet : La zone est infranchissable et offre une couverture totale.",
+      "Choisir une zone. Effet : La zone est infranchissable et offre un abri totale.",
     role: "controller",
   },
   {
     id: 7,
-    name: "Zone de Douleur",
+    name: "Zone de Douleur (Concentration)",
     rarity: "uncommon",
     description:
       "Choisir une zone. Effet : La zone est dangereuse et instable.",
@@ -79,7 +79,7 @@ const DEFAULT_ACTIONS = [
     name: "Force Explosive",
     rarity: "uncommon",
     description:
-      "Attaquer une zone. Réussite : La cible est repoussée de 20 pieds à partir du centre.",
+      "Attaquer une zone. Réussite : La cible est repoussée de 20ft. à partir du centre.",
     role: "controller",
   },
   {
@@ -87,7 +87,7 @@ const DEFAULT_ACTIONS = [
     name: "Viens Ici",
     rarity: "common",
     description:
-      "Attaquer une cible [attack]. Réussite : La cible est attirée jusqu'à 10 pieds vers vous.",
+      "Attaquer une cible [attack]. Réussite : La cible est attirée jusqu'à 10ft. vers vous.",
     role: "controller",
   },
   {
@@ -103,7 +103,7 @@ const DEFAULT_ACTIONS = [
     name: "Repousser",
     rarity: "common",
     description:
-      "Attaquer une cible [attack]. Réussite : La cible est repoussée jusqu'à 10 pieds.",
+      "Attaquer une cible [attack]. Réussite : La cible est repoussée jusqu'à 10ft.",
     role: "controller",
   },
   {
@@ -130,8 +130,64 @@ const DEFAULT_ACTIONS = [
     description: "Attaquez une cible. Touche : La cible est agrippée par vous.",
     role: "defender",
   },
-
   // Lurkers
+  {
+    id: 16,
+    name: "L'appel de la Tombe",
+    rarity: "uncommon",
+    description:
+      "Attaquez une cible. Réussite : la cible perd un dé de vie non dépensé (en cours).",
+    role: "lurker",
+  },
+  {
+    id: 19,
+    name: "Reste à terre",
+    rarity: "common",
+    description:
+      "Attaquez une cible. Nécessite : la cible est à terre. Réussite : la cible est entravé jusqu'à la fin de votre prochain tour.",
+    role: "lurker",
+  },
+  {
+    id: 19,
+    name: "Saut d'effroi",
+    rarity: "common",
+    description:
+      "Attaquez une cible. Nécessite : la cible est aveuglé ou éffrayé. Réussite : la cible est étourdie jusqu'à la fin de votre prochain tour.",
+    role: "lurker",
+  },
+  {
+    id: 17,
+    name: "Point de Pression",
+    rarity: "uncommon",
+    description:
+      "Attaquez une cible. Conditions : la cible est entravé. Réussite : la cible est paralysée jusqu'à la fin de votre prochain tour.",
+    role: "lurker",
+  },
+  {
+    id: 18,
+    name: "Disparition (Concentration)",
+    rarity: "rare",
+    description:
+      "Vous devenez invisible. Faire une attaque ou lancer un sort met fin à cet effet.",
+    role: "lurker",
+  },
+  {
+    id: 18,
+    name: "Camouflage",
+    rarity: "uncommon",
+    description:
+      "Vous vous fondez dans votre environnement et devenez complètement indiscernable de celui-ci. Se déplacer, porter une attaque ou lancer un sort met fin à cet effet.",
+    role: "lurker",
+  },
+  {
+    id: 18,
+    name: "Bombe Éclair",
+    rarity: "uncommon",
+    description:
+      "Attaquez une zone. Réussite : la cible est aveuglée jusqu'à la fin de son prochain tour.",
+    role: "lurker",
+  },
+
   // Skrimishers
   // Strikers
   // Supporters

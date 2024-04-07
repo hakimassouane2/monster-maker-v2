@@ -5,7 +5,7 @@ const DEFAULT_BONUS_ACTIONS = [
   // Controller
   {
     id: 0,
-    name: "Zone de Ténèbres",
+    name: "Zone de Ténèbres (Concentration)",
     rarity: "rare",
     description:
       "Choisir une zone. Effet : La zone est remplie de ténèbres magiques.",
@@ -14,7 +14,7 @@ const DEFAULT_BONUS_ACTIONS = [
   // Defender
   {
     id: 1,
-    name: "Élever le bouclier",
+    name: "Lever de bouclier",
     rarity: "uncommon",
     description:
       "Vous gagnez +2 CA et l'avantage sur un jet de sauvegarde de votre choix jusqu'à la fin de votre prochain tour.",
@@ -46,7 +46,7 @@ const DEFAULT_BONUS_ACTIONS = [
   },
   {
     id: 5,
-    name: "Derrière moi",
+    name: "Derrière moi (Concentration)",
     rarity: "uncommon",
     description:
       "Jusqu'à la fin de l'effet, les alliés adjacents sont considérés comme ayant trois quarts de couverture.",
@@ -70,11 +70,44 @@ const DEFAULT_BONUS_ACTIONS = [
   },
   {
     id: 8,
-    name: "Zone dangereuse",
+    name: "Espace abrupt (Concentration)",
+    rarity: "common",
+    description:
+      "L'espace à votre porté est un terrain difficile pour les ennemis.",
+    role: "defender",
+  },
+  {
+    id: 9,
+    name: "Zone dangereuse (Concentration)",
     rarity: "uncommon",
     description:
       "Tout ennemi qui commence son tour à l'intérieur ou qui se déplace dans votre portée subit des dégâts égaux à votre niveau de combat (une fois par tour).",
     role: "defender",
+  },
+  // Lurker
+  {
+    id: 9,
+    name: "Plaies Perforantes",
+    rarity: "uncommon",
+    description:
+      "Choisissez un type de dégât. Jusqu'à la fin de votre prochain tour, les attaques que vous portez avec ce type ignore la résistance a ce type, et traite l'immunité comme une résistance.",
+    role: "lurker",
+  },
+  {
+    id: 9,
+    name: "Guerilla",
+    rarity: "common",
+    description:
+      "Jusqu'à la fin de votre prochain tour, vous ne revelez pas votre position ou vous même lorsque vous attaquez ou lancez un sort.",
+    role: "lurker",
+  },
+  {
+    id: 9,
+    name: "Écran de fumée",
+    rarity: "uncommon",
+    description:
+      "Choisissez une zone. Effet : La zone est fortement obscurcis jusqu'à la fin de votre prochain tour.",
+    role: "lurker",
   },
   // Striker
   {

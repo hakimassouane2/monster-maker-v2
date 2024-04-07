@@ -5,7 +5,7 @@ const DEFAULT_REACTIONS = [
   // Defender
   {
     id: 0,
-    name: "J'ai ton dos",
+    name: "Je te couvre",
     rarity: "common",
     description:
       "Si vous êtes adjacent à un allié qui est la cible d'une attaque qui ne vous inclut pas, vous pouvez rediriger l'attaque sur vous-même.",
@@ -13,7 +13,7 @@ const DEFAULT_REACTIONS = [
   },
   {
     id: 1,
-    name: "Je suis juste à côté de toi",
+    name: "Je suis à tes côtés",
     rarity: "common",
     description:
       "Quand un allié à proximité est attaqué, vous pouvez vous déplacer jusqu'à la moitié de votre vitesse vers cet allié.",

@@ -13,11 +13,52 @@ const DEFAULT_FREE_ACTIONS = [
   },
   {
     id: 1,
-    name: "Faire trébucher",
+    name: "Croche-patte",
     rarity: "common",
     description:
       "Requiert : Vous avez touché une cible avec une attaque d'opportunité. Effet : La cible tombe à terre.",
     role: "defender",
+  },
+  // Lurker
+  {
+    id: 1,
+    name: "Touché de la mort",
+    rarity: "uncommon",
+    description:
+      "Requiert : Vous infligez un coup critique avec une attaque. Effet : La créature obtient immédiatement un échec au JDS contre la mort.",
+    role: "lurker",
+  },
+  {
+    id: 1,
+    name: "Marqué par la mort (Concentration)",
+    rarity: "uncommon",
+    description:
+      "Requiert : Vous toucher une créature se situant a moins de 30ft. de vous et qui a 50% de pv ou plus avec une attaque. Effet : La créature est marquée par la mort. Si la créature est réduite à 0 pv en étant marqué, elle meurt instantanément.",
+    role: "lurker",
+  },
+  {
+    id: 1,
+    name: "Choc systèmique",
+    rarity: "uncommon",
+    description:
+      "Requiert : Vous réduisez une cible à 0pv. Effet : La créature gagne un niveau d'épuisement.",
+    role: "lurker",
+  },
+  {
+    id: 5,
+    name: "Reste Tranquille",
+    rarity: "common",
+    description:
+      "Nécessite : vous avez touché une cible qui s'est déplacée sur une distance de 10ft. ou moins lors de son dernier tour. Effet : La cible tombe à terre.",
+    role: "lurker",
+  },
+  {
+    id: 6,
+    name: "Attaque Sournoise",
+    rarity: "common",
+    description:
+      "Nécessite : vous avez touché une cible avec un jet d'attaque ayant un avantage. Effet : vous infligez des dégâts supplémentaires égaux à votre niveau de combat ([level]).",
+    role: "lurker",
   },
   // Striker
   {
