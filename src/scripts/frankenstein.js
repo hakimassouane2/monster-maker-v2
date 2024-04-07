@@ -782,6 +782,11 @@ const Frankenstein = (function () {
         return parseShortcode(monster, token);
       });
 
+      // Match decimal numbers and round them down
+      output = output.replace(/\b\d+\.\d+\b/g, function (match) {
+        return Math.floor(parseFloat(match));
+      });
+
       output = output.replace(/[\*\_]{2}([^\*\_]+)[\*\_]{2}/g, "<b>$1</b>");
       output = output.replace(/[\_]{1}([^\_]+)[\_]{1}/g, "<i>$1</i>");
       output = output.replace(
