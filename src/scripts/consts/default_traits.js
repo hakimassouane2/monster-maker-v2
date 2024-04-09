@@ -381,7 +381,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Transfert de dégâts",
     description:
-      "Lorsque vous subissez des dégâts d'une attaque, vous pouvez transférer la moitié de ces dégâts à une autre créature située à moins de 5 pieds de vous",
+      "Lorsque vous subissez des dégâts d'une attaque, vous pouvez transférer la moitié de ces dégâts à une autre créature située à moins de 5ft. de vous",
   },
   {
     id: 55,
@@ -546,7 +546,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "Avantage martial",
     description:
-      "Une fois par tour, vous pouvez infliger des dégâts supplémentaires égaux à votre niveau lorsque vous touchez une cible située à moins de 5 pieds de vos alliés",
+      "Une fois par tour, vous pouvez infliger des dégâts supplémentaires égaux à votre niveau lorsque vous touchez une cible située à moins de 5ft. de vos alliés",
   },
   {
     id: 79,
@@ -697,28 +697,28 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Aberration) Détection de Sentience",
     description:
-      "Vous pouvez ressentir la présence et la localisation de toute autre créature dans un rayon de 300 pieds de vous qui a une Intelligence de 3 ou plus (indépendamment des barrières interposées), à moins que la créature ne soit protégée par un sort d'écran mental.",
+      "Vous pouvez ressentir la présence et la localisation de toute autre créature dans un rayon de 300ft. de vous qui a une Intelligence de 3 ou plus (indépendamment des barrières interposées), à moins que la créature ne soit protégée par un sort d'écran mental.",
   },
   {
     id: 101,
     role: null,
     name: "(Aberration) Aura Perturbante",
     description:
-      "Toutes les créatures dans un rayon de 10 pieds de vous ont un désavantage aux jets de sauvegarde de Concentration.",
+      "Toutes les créatures dans un rayon de 10ft. de vous ont un désavantage aux jets de sauvegarde de Concentration.",
   },
   {
     id: 102,
     role: null,
     name: "(Aberration) Vue Horrifiante",
     description:
-      "Au début de votre tour, chaque créature dans un rayon de 30 pieds de vous qui peut vous voir doit réussir un jet de sauvegarde d'Intelligence ou être entravée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit de 5 ou plus, la créature est immunisée contre votre vue jusqu'à ce qu'elle termine un repos long.",
+      "Au début de votre tour, chaque créature dans un rayon de 30ft. de vous qui peut vous voir doit réussir un jet de sauvegarde d'Intelligence ou être entravée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit de 5 ou plus, la créature est immunisée contre votre vue jusqu'à ce qu'elle termine un repos long.",
   },
   {
     id: 103,
     role: null,
     name: "(Aberration) Son Horrifiant",
     description:
-      "Au début de votre tour, chaque créature dans un rayon de 30 pieds de vous qui peut vous entendre doit réussir un jet de sauvegarde d'Intelligence ou être entravée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit de 5 ou plus, la créature est immunisée contre votre son jusqu'à ce qu'elle termine un repos long.",
+      "Au début de votre tour, chaque créature dans un rayon de 30ft. de vous qui peut vous entendre doit réussir un jet de sauvegarde d'Intelligence ou être entravée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit de 5 ou plus, la créature est immunisée contre votre son jusqu'à ce qu'elle termine un repos long.",
   },
   {
     id: 104,
@@ -746,35 +746,35 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Aberration) Cri Psychique",
     description:
-      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 10 pieds doit réussir un jet de sauvegarde d'Intelligence ou subir 75% de dégâts psychiques.",
+      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 10ft. doit réussir un jet de sauvegarde d'Intelligence ou subir 75% de dégâts psychiques.",
   },
   {
     id: 108,
     role: null,
     name: "(Aberration) Lecture de Pensées",
     description:
-      "Vous pouvez lire magiquement les pensées superficielles de toute créature dans un rayon de 60 pieds de vous. L'effet est bloqué par 3 pieds de bois ou de terre, 2 pieds de pierre, 2 pouces de métal ou une mince feuille de plomb.",
+      "Vous pouvez lire magiquement les pensées superficielles de toute créature dans un rayon de 60ft. de vous. L'effet est bloqué par 3ft. de bois ou de terre, 2ft. de pierre, 2 pouces de métal ou une mince feuille de plomb.",
   },
   {
     id: 109,
     role: null,
     name: "(Aberration) Transmission de Pensées",
     description:
-      "Vous pouvez transmettre magiquement des pensées simples à toute créature dans un rayon de 120 pieds de vous qui peut comprendre une langue.",
+      "Vous pouvez transmettre magiquement des pensées simples à toute créature dans un rayon de 120ft. de vous qui peut comprendre une langue.",
   },
   {
     id: 110,
     role: null,
     name: "(Aberration) Influence Sinistre",
     description:
-      "Vous pouvez commander magiquement toute créature spécifiée dans un rayon de 120 pieds de vous en utilisant une télépathie limitée.",
+      "Vous pouvez commander magiquement toute créature spécifiée dans un rayon de 120ft. de vous en utilisant une télépathie limitée.",
   },
   {
     id: 111,
     role: null,
     name: "(Aberration) Lien Télépathique",
     description:
-      "Vous partagez un lien télépathique avec une ou plusieurs créatures dans un rayon de 120 pieds de vous.",
+      "Vous partagez un lien télépathique avec une ou plusieurs créatures dans un rayon de 120ft. de vous.",
   },
   {
     id: 112,
@@ -1051,7 +1051,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Créature Artificielle) Aura de Loi",
     description:
-      "Toute créature loyale dans un rayon de 10 pieds de vous a l'avantage aux jets de sauvegarde.",
+      "Toute créature loyale dans un rayon de 10ft. de vous a l'avantage aux jets de sauvegarde.",
   },
   {
     id: 153,
@@ -1072,14 +1072,14 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Créature Artificielle) Contrecoup",
     description:
-      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 10 pieds doit réussir un jet de sauvegarde de Dextérité ou subir 75% de dégâts de force.",
+      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 10ft. doit réussir un jet de sauvegarde de Dextérité ou subir 75% de dégâts de force.",
   },
   {
     id: 156,
     role: null,
     name: "(Créature Artificielle) Bande Passante",
     description:
-      "Divisez équitablement tout dommage que vous devriez subir entre tous les construits du même type dans un rayon de 30 pieds.",
+      "Divisez équitablement tout dommage que vous devriez subir entre tous les construits du même type dans un rayon de 30ft.",
   },
   {
     id: 157,
@@ -1168,7 +1168,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Dragon) Attaque Plongeante",
     description:
-      "Si vous volez au moins 20 pieds vers une cible et la frappez avec une attaque d'arme de mêlée, vous infligez des dégâts supplémentaires égaux à votre niveau de combat.",
+      "Si vous volez au moins 20ft. vers une cible et la frappez avec une attaque d'arme de mêlée, vous infligez des dégâts supplémentaires égaux à votre niveau de combat.",
   },
   {
     id: 170,
@@ -1196,21 +1196,21 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Dragon) Peur de Moi Seul",
     description:
-      "Les alliés dans un rayon de 30 pieds de vous sont immunisés contre la peur provenant d'autres sources que vous.",
+      "Les alliés dans un rayon de 30ft. de vous sont immunisés contre la peur provenant d'autres sources que vous.",
   },
   {
     id: 174,
     role: null,
     name: "(Dragon) Aura Terrifiante",
     description:
-      "Les ennemis dans un rayon de 30 pieds de vous ont désavantage sur les jets de sauvegarde contre la peur.",
+      "Les ennemis dans un rayon de 30ft. de vous ont désavantage sur les jets de sauvegarde contre la peur.",
   },
   {
     id: 175,
     role: null,
     name: "(Dragon) Atterrissage Lourd",
     description:
-      "Quand vous atterrissez sur le sol depuis une hauteur de 20 pieds ou plus, chaque créature dans un rayon de 20 pieds de vous doit réussir un jet de sauvegarde de Force ou tomber à terre.",
+      "Quand vous atterrissez sur le sol depuis une hauteur de 20ft. ou plus, chaque créature dans un rayon de 20ft. de vous doit réussir un jet de sauvegarde de Force ou tomber à terre.",
   },
   {
     id: 176,
@@ -1224,7 +1224,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Dragon) Présence Intimidante",
     description:
-      "Au début de votre tour, chaque ennemi dans un rayon de 30 pieds de vous qui peut vous entendre ou vous voir doit réussir un jet de sauvegarde de Charisme ou être effrayé de vous jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit de 5 points ou plus, la créature est immunisée contre votre présence intimidante jusqu'à ce qu'elle termine un repos long.",
+      "Au début de votre tour, chaque ennemi dans un rayon de 30ft. de vous qui peut vous entendre ou vous voir doit réussir un jet de sauvegarde de Charisme ou être effrayé de vous jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit de 5 points ou plus, la créature est immunisée contre votre présence intimidante jusqu'à ce qu'elle termine un repos long.",
   },
   {
     id: 178,
@@ -1252,7 +1252,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Dragon) Décollage",
     description:
-      "Quand vous quittez le sol pour voler, chaque créature dans un rayon de 20 pieds de vous doit réussir un jet de sauvegarde de Force ou être repoussée jusqu'à 10 pieds.",
+      "Quand vous quittez le sol pour voler, chaque créature dans un rayon de 20ft. de vous doit réussir un jet de sauvegarde de Force ou être repoussée jusqu'à 10ft.",
   },
   {
     id: 182,
@@ -1300,7 +1300,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Élémentaire) Explosion Mortelle",
     description:
-      "Lorsque vous mourrez, chaque créature dans un rayon de 10 pieds de vous doit réussir un jet de sauvegarde de Dextérité ou subir 75% de dégâts variables.",
+      "Lorsque vous mourrez, chaque créature dans un rayon de 10ft. de vous doit réussir un jet de sauvegarde de Dextérité ou subir 75% de dégâts variables.",
   },
   {
     id: 189,
@@ -1314,7 +1314,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Élémentaire) Aura Élémentaire",
     description:
-      "Chaque créature dans un rayon de 10 pieds de vous est vulnérable aux dégâts variables (ou, s'ils sont immunisés, ceux-ci sont réduits en résistance).",
+      "Chaque créature dans un rayon de 10ft. de vous est vulnérable aux dégâts variables (ou, s'ils sont immunisés, ceux-ci sont réduits en résistance).",
   },
   {
     id: 191,
@@ -1328,14 +1328,14 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Élémentaire) Pouls Élémentaire",
     description:
-      "Au début de votre tour, chaque créature dans un rayon de 10 pieds de vous subit des dégâts variables égaux à votre niveau de combat.",
+      "Au début de votre tour, chaque créature dans un rayon de 10ft. de vous subit des dégâts variables égaux à votre niveau de combat.",
   },
   {
     id: 193,
     role: null,
     name: "(Élémentaire) Explosion",
     description:
-      "Lorsque vous mourrez, chaque créature dans un rayon de 10 pieds de vous doit effectuer un jet de sauvegarde de Dextérité. Si la créature échoue, elle subit 50% de dégâts variables. Si elle réussit, elle subit la moitié des dégâts.",
+      "Lorsque vous mourrez, chaque créature dans un rayon de 10ft. de vous doit effectuer un jet de sauvegarde de Dextérité. Si la créature échoue, elle subit 50% de dégâts variables. Si elle réussit, elle subit la moitié des dégâts.",
   },
   {
     id: 194,
@@ -1363,14 +1363,14 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Élémentaire) Susceptibilité à l'Eau",
     description:
-      "Pour chaque 5 pieds que vous vous déplacez dans l'eau, ou pour chaque gallon d'eau projeté sur vous, vous subissez 1 dégât de froid.",
+      "Pour chaque 5ft. que vous vous déplacez dans l'eau, ou pour chaque gallon d'eau projeté sur vous, vous subissez 1 dégât de froid.",
   },
   {
     id: 198,
     role: null,
     name: "(Élémentaire) Tourbillon",
     description:
-      "Au début de votre tour, vous pouvez déplacer chaque créature dans votre portée jusqu'à 10 pieds.",
+      "Au début de votre tour, vous pouvez déplacer chaque créature dans votre portée jusqu'à 10ft.",
   },
   {
     id: 199,
@@ -1404,21 +1404,21 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Fée) Vue Captivante",
     description:
-      "Au début de votre tour, chaque créature dans un rayon de 30 pieds de vous qui peut vous voir doit réussir un jet de sauvegarde de Sagesse ou être charmée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit avec un écart de 5 ou plus, la créature est immunisée contre votre vue jusqu'à ce qu'elle finisse un repos long.",
+      "Au début de votre tour, chaque créature dans un rayon de 30ft. de vous qui peut vous voir doit réussir un jet de sauvegarde de Sagesse ou être charmée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit avec un écart de 5 ou plus, la créature est immunisée contre votre vue jusqu'à ce qu'elle finisse un repos long.",
   },
   {
     id: 204,
     role: null,
     name: "(Fée) Son Captivant",
     description:
-      "Au début de votre tour, chaque créature dans un rayon de 30 pieds de vous qui peut vous entendre doit réussir un jet de sauvegarde de Sagesse ou être charmée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit avec un écart de 5 ou plus, la créature est immunisée contre votre son jusqu'à ce qu'elle finisse un repos long.",
+      "Au début de votre tour, chaque créature dans un rayon de 30ft. de vous qui peut vous entendre doit réussir un jet de sauvegarde de Sagesse ou être charmée jusqu'à la fin de son prochain tour. Si le jet de sauvegarde réussit avec un écart de 5 ou plus, la créature est immunisée contre votre son jusqu'à ce qu'elle finisse un repos long.",
   },
   {
     id: 205,
     role: null,
     name: "(Fée) Aura Charmante",
     description:
-      "Les créatures dans un rayon de 10 pieds de vous ont un désavantage sur les jets de sauvegarde contre les effets de charme.",
+      "Les créatures dans un rayon de 10ft. de vous ont un désavantage sur les jets de sauvegarde contre les effets de charme.",
   },
   {
     id: 206,
@@ -1466,7 +1466,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Fée) Redirection d'Attaque",
     description:
-      "Quand un ennemi que vous pouvez voir vous cible avec une attaque, vous pouvez dépenser votre réaction pour choisir une créature alliée à moins de 5 pieds de vous et échanger de place. La créature alliée subit les dégâts à votre place.",
+      "Quand un ennemi que vous pouvez voir vous cible avec une attaque, vous pouvez dépenser votre réaction pour choisir une créature alliée à moins de 5ft. de vous et échanger de place. La créature alliée subit les dégâts à votre place.",
   },
   {
     id: 213,
@@ -1493,7 +1493,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Fiélon) Aura de la Haine",
     description:
-      "Tout être bon qui commence son tour à moins de 10 pieds de vous subit des dégâts de feu égaux à votre niveau de combat.",
+      "Tout être bon qui commence son tour à moins de 10ft. de vous subit des dégâts de feu égaux à votre niveau de combat.",
   },
   {
     id: 217,
@@ -1521,7 +1521,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Fiélon) Envoûtement",
     description:
-      "Les créatures à moins de 10 pieds de vous ont désavantage aux jets de sauvegarde contre charmé.",
+      "Les créatures à moins de 10ft. de vous ont désavantage aux jets de sauvegarde contre charmé.",
   },
   {
     id: 221,
@@ -1535,7 +1535,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Fiélon) Soutien Infernal",
     description:
-      "Toute créature à moins de 10 pieds de vous qui a un alignement mauvais a l'avantage aux jets de sauvegarde.",
+      "Toute créature à moins de 10ft. de vous qui a un alignement mauvais a l'avantage aux jets de sauvegarde.",
   },
   {
     id: 223,
@@ -1555,7 +1555,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Fiélon) Feu de l'Enfer",
     description:
-      "Lorsque vous êtes réduit à 0 point de vie, chaque créature à moins de 10 pieds de vous doit réussir un jet de sauvegarde de Dextérité ou subir 75 % de dégâts de feu.",
+      "Lorsque vous êtes réduit à 0 point de vie, chaque créature à moins de 10ft. de vous doit réussir un jet de sauvegarde de Dextérité ou subir 75 % de dégâts de feu.",
   },
   {
     id: 226,
@@ -1569,7 +1569,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Fiélon) Pacte de Sang",
     description:
-      "Lorsque vous subissez des dégâts, vous pouvez infliger ces dégâts plutôt à une créature à moins de 60 pieds de vous actuellement charmée par vous.",
+      "Lorsque vous subissez des dégâts, vous pouvez infliger ces dégâts plutôt à une créature à moins de 60ft. de vous actuellement charmée par vous.",
   },
   {
     id: 228,
@@ -1611,7 +1611,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Géant) Effondrement",
     description:
-      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 20 pieds doit réussir un jet de sauvegarde de Force ou tomber à terre.",
+      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 20ft. doit réussir un jet de sauvegarde de Force ou tomber à terre.",
   },
   {
     id: 234,
@@ -1639,14 +1639,14 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Géant) Repoussement",
     description:
-      "Lorsque vous touchez une créature avec une attaque d'arme de mêlée, la créature doit réussir un jet de sauvegarde de Force ou être repoussée jusqu'à 10 pieds.",
+      "Lorsque vous touchez une créature avec une attaque d'arme de mêlée, la créature doit réussir un jet de sauvegarde de Force ou être repoussée jusqu'à 10ft.",
   },
   {
     id: 238,
     role: null,
     name: "(Géant) Tremblement",
     description:
-      "Lorsque vous atterrissez au sol d'une hauteur de 20 pieds ou plus, chaque créature dans un rayon de 20 pieds de vous doit réussir un jet de sauvegarde de Force ou tomber à terre.",
+      "Lorsque vous atterrissez au sol d'une hauteur de 20ft. ou plus, chaque créature dans un rayon de 20ft. de vous doit réussir un jet de sauvegarde de Force ou tomber à terre.",
   },
   {
     id: 239,
@@ -1763,7 +1763,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Humanoïde) Portée Étendue",
     description:
-      "Pendant votre tour, vous pouvez étendre la portée naturelle de vos armes de 5 pieds.",
+      "Pendant votre tour, vous pouvez étendre la portée naturelle de vos armes de 5ft.",
   },
   {
     id: 256,
@@ -1875,7 +1875,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Créature Monstrueuse) Inévitable",
     description:
-      "Vous ignorez les terrains difficiles et les effets magiques ne peuvent pas réduire votre vitesse ou vous contraindre. Vous pouvez dépenser 5 pieds de déplacement pour vous échapper de contraintes non magiques ou être agrippé.",
+      "Vous ignorez les terrains difficiles et les effets magiques ne peuvent pas réduire votre vitesse ou vous contraindre. Vous pouvez dépenser 5ft. de déplacement pour vous échapper de contraintes non magiques ou être agrippé.",
   },
   {
     id: 272,
@@ -1958,7 +1958,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Vase) Explosif",
     description:
-      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 10 pieds doit réussir un jet de sauvegarde de Dextérité ou subir 75% de dégâts d'acide.",
+      "Lorsque vous êtes réduit à 0 points de vie, chaque créature dans un rayon de 10ft. doit réussir un jet de sauvegarde de Dextérité ou subir 75% de dégâts d'acide.",
   },
   {
     id: 284,
@@ -2038,7 +2038,7 @@ const DEFAULT_TRAITS = [
   {
     id: 295,
     role: null,
-    name: "(Vase) Sous les Pieds",
+    name: "(Vase) Sous lesft.",
     description:
       "Vous pouvez entrer dans l'espace de n'importe quelle créature de votre taille ou plus grande. Tant que vous êtes dans l'espace d'une créature, elle ne peut pas prendre l'action de désengagement.",
   },
@@ -2054,14 +2054,14 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Plante) Spores de Détresse",
     description:
-      "Lorsque vous subissez des dégâts, toutes les autres créatures du même type dans un rayon de 240 pieds peuvent ressentir votre douleur.",
+      "Lorsque vous subissez des dégâts, toutes les autres créatures du même type dans un rayon de 240ft. peuvent ressentir votre douleur.",
   },
   {
     id: 298,
     role: null,
     name: "(Plante) Racines Enchevêtrantes",
     description:
-      "Les ennemis se tenant sur le sol dans un rayon de 10 pieds de vous ont un désavantage aux jets de sauvegarde de Dextérité.",
+      "Les ennemis se tenant sur le sol dans un rayon de 10ft. de vous ont un désavantage aux jets de sauvegarde de Dextérité.",
   },
   {
     id: 299,
@@ -2082,7 +2082,7 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Plante) Sol Vivant",
     description:
-      "Le sol dans un rayon de 10 pieds autour de vous est un terrain difficile. Chaque créature qui commence son tour dans cette zone doit réussir un jet de sauvegarde de Force ou voir sa vitesse réduite à 0 jusqu'au début de son prochain tour.",
+      "Le sol dans un rayon de 10ft. autour de vous est un terrain difficile. Chaque créature qui commence son tour dans cette zone doit réussir un jet de sauvegarde de Force ou voir sa vitesse réduite à 0 jusqu'au début de son prochain tour.",
   },
   {
     id: 302,
@@ -2110,28 +2110,28 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Plante) Parfum Apaisant",
     description:
-      "Au début de votre tour, chaque créature dans un rayon de 30 pieds de vous doit réussir un jet de sauvegarde de Constitution ou tomber inconsciente. Cet effet prend fin après 1 minute ou si la créature subit des dégâts. Si le jet de sauvegarde réussit de 5 ou plus, la créature est immunisée à votre parfum jusqu'à ce qu'elle termine un repos long.",
+      "Au début de votre tour, chaque créature dans un rayon de 30ft. de vous doit réussir un jet de sauvegarde de Constitution ou tomber inconsciente. Cet effet prend fin après 1 minute ou si la créature subit des dégâts. Si le jet de sauvegarde réussit de 5 ou plus, la créature est immunisée à votre parfum jusqu'à ce qu'elle termine un repos long.",
   },
   {
     id: 306,
     role: null,
     name: "(Plante) Pollen Toxique",
     description:
-      "Toute créature qui respire dans un rayon de 30 pieds de vous doit faire un jet de sauvegarde de Constitution ou subir des dégâts de poison égaux à votre niveau de combat.",
+      "Toute créature qui respire dans un rayon de 30ft. de vous doit faire un jet de sauvegarde de Constitution ou subir des dégâts de poison égaux à votre niveau de combat.",
   },
   {
     id: 307,
     role: null,
     name: "(Plante) Marcheur des Arbres",
     description:
-      "Une fois par tour, vous pouvez dépenser 10 pieds de votre mouvement pour entrer magiquement dans un arbre vivant à portée et émerger d'un deuxième arbre vivant à 60 pieds du premier arbre. Vous apparaîtrez dans un espace inoccupé à 5 pieds du deuxième arbre. Les deux arbres doivent être d'au moins une catégorie de taille plus grande que vous.",
+      "Une fois par tour, vous pouvez dépenser 10ft. de votre mouvement pour entrer magiquement dans un arbre vivant à portée et émerger d'un deuxième arbre vivant à 60ft. du premier arbre. Vous apparaîtrez dans un espace inoccupé à 5ft. du deuxième arbre. Les deux arbres doivent être d'au moins une catégorie de taille plus grande que vous.",
   },
   {
     id: 308,
     role: null,
     name: "(Mort-Vivant) Appel de la tombe",
     description:
-      "Les créatures dans un rayon de 30 pieds autour de vous ont un désavantage sur les jets de sauvegarde contre la mort.",
+      "Les créatures dans un rayon de 30ft. autour de vous ont un désavantage sur les jets de sauvegarde contre la mort.",
   },
   {
     id: 309,
@@ -2166,14 +2166,14 @@ const DEFAULT_TRAITS = [
     role: null,
     name: "(Mort-Vivant) Phylactère",
     description:
-      "Si vous êtes détruit, vous réapparaissez à moins de 5 pieds de votre phylactère dans 1d10 jours avec un nouveau corps entièrement guéri.",
+      "Si vous êtes détruit, vous réapparaissez à moins de 5ft. de votre phylactère dans 1d10 jours avec un nouveau corps entièrement guéri.",
   },
   {
     id: 314,
     role: null,
     name: "(Mort-Vivant) Possession",
     description:
-      "Une humanoïde à laquelle vous êtes adjacent doit réussir un jet de sauvegarde de Charisme ou être possédée par vous. Vous prenez le contrôle complet du corps de la cible jusqu'à ce que a) vous mettiez fin à l'effet, b) la cible meure, ou c) vous soyez expulsé par un sort ou un effet. Si la cible subit des dégâts, vous devez réussir un jet de sauvegarde de Charisme avec un DD de 5 + les dégâts infligés pour conserver la possession, sinon vous êtes expulsé dans un espace inoccupé à moins de 5 pieds.",
+      "Une humanoïde à laquelle vous êtes adjacent doit réussir un jet de sauvegarde de Charisme ou être possédée par vous. Vous prenez le contrôle complet du corps de la cible jusqu'à ce que a) vous mettiez fin à l'effet, b) la cible meure, ou c) vous soyez expulsé par un sort ou un effet. Si la cible subit des dégâts, vous devez réussir un jet de sauvegarde de Charisme avec un DD de 5 + les dégâts infligés pour conserver la possession, sinon vous êtes expulsé dans un espace inoccupé à moins de 5ft.",
   },
   {
     id: 315,
