@@ -133,14 +133,16 @@ E: Evasive Maneuvers: (Reaction, Common) When an enemy misses you with a ranged 
 
 // Pour les extraction de techniques giffy pdf
 
-I'm going to give you a text, from this text you will extract the data. For each groups you will start by a H1 title with the name of the group (Action, Bonus Action, Free, Reaction) and fill the following json for each of the techniques. Follow strictly the indications of the json
+Based on the text i will give you I want you to generate a json based on a template I will give you
+
+here is the json template you need to follow :
 
 {
-id: 1
-name: "", // In the same casing but translate the name to french language. It's very important that this should be translated to french language ABSOLUTELY
-rarity: "", // In all lower case and in english
-description: "", // In the same casing but translate the description to french language
-role: "striker", // keep this exactly the same for all of them
+id: , // Incrementing number id starting from number 131
+role: null,
+name: "", // Name of the trait, this has to ABSOLUTELY NUMBER ONE PRIORITY be translated to the FRENCH language IT SHOULD NOT BE IN ENGLISH, and it should be preceded by (Céleste)
+description:
+"", // Description of the trait, this has to ABSOLUTELY NUMBER ONE PRIORITY be translated to the FRENCH language IT SHOULD NOT BE IN ENGLISH
 },
 
 Here is the text :
