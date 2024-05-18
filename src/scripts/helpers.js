@@ -50,7 +50,6 @@ const Helpers = (function () {
         b = parseFloat(b);
       }
 
-      console.log(a, b, Math.floor(a * b));
       return Math.floor(a * b);
     });
 

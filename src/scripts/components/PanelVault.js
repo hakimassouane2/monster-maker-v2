@@ -197,12 +197,40 @@ class PanelVault extends Component {
       }.bind(this)
     );
 
+    // Show Confirm Modal to export vault to S3
+    $(this.el).on("click", ".btn-confirm-export-vault-to-s3", function () {
+      $("#modal-export-monsters-confirmation").modal("show");
+    });
+
+    // Show Confirm Modal to import vault from S3
+    $(this.el).on("click", ".btn-confirm-import-vault-from-s3", function () {
+      $("#modal-import-monsters-confirmation").modal("show");
+    });
+
     // Import monsters into the vault
     $(this.el).on(
       "click",
       ".btn-import-from-json",
       function () {
         $("#vault-import-file").click();
+      }.bind(this)
+    );
+
+    // Export current vault to s3
+    $(this.el).on(
+      "click",
+      ".btn-export-vault-to-s3",
+      function () {
+        this.exportVaultToS3();
+      }.bind(this)
+    );
+
+    // Import monsters into the vault from s3
+    $(this.el).on(
+      "click",
+      ".btn-import-vault-from-s3",
+      function () {
+        this.importVaultFromS3();
       }.bind(this)
     );
 
@@ -295,6 +323,60 @@ class PanelVault extends Component {
    */
   exportVault() {
     Files.saveJson("monster_vault", { vault: Storage.getMonsters() });
+  }
+
+  exportVaultToS3() {
+    Files.saveToS3("monster_vault", { vault: Storage.getMonsters() });
+    $("#modal-upload-vault-success").modal("show");
+  }
+
+  importVaultFromS3() {
+    // Call the function and handle the Promise it returns
+    Files.downloadLatestVaultFromS3()
+      .then((downloadedFile) => {
+        if (downloadedFile) {
+          // Process the downloaded file content
+          let contents = downloadedFile;
+          if (contents["vault"]) {
+            Storage.importMonsters(contents["vault"]);
+            this.data.monsters = Storage.getMonsters();
+            this.data.monsters.forEach(function (x) {
+              try {
+                x.monster = Frankenstein.createVaultMonster(x.blueprint);
+              } catch (error) {
+                console.error(
+                  "Impossible de créer un profil de monstre à partir du blueprint, retour à la valeur par défaut"
+                );
+                x.monster = Frankenstein.createVaultMonster(new Blueprint());
+              }
+            });
+            this.table.clear().rows.add(this.data.monsters).draw();
+            $("#modal-imported-monsters .count").html(contents["vault"].length);
+            $("#modal-imported-monsters").modal("show");
+          } else if (contents["monster"]) {
+            Storage.importMonster(contents["monster"]);
+            this.data.monsters = Storage.getMonsters();
+            this.data.monsters.forEach(function (x) {
+              try {
+                x.monster = Frankenstein.createVaultMonster(x.blueprint);
+              } catch (error) {
+                console.error(
+                  "Impossible de créer un profil de monstre à partir du blueprint, retour à la valeur par défaut"
+                );
+                x.monster = Frankenstein.createVaultMonster(new Blueprint());
+              }
+            });
+            this.table.clear().rows.add(this.data.monsters).draw();
+            $("#modal-imported-monsters .count").html(1);
+            $("#modal-imported-monsters").modal("show");
+          } else {
+            $("#modal-import-monsters-failure").modal("show");
+          }
+        }
+      })
+      .catch((error) => {
+        console.error("Error in importVaultFromS3:", error);
+      });
   }
 }
 

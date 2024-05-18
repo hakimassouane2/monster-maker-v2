@@ -41,6 +41,20 @@
           <span class="fas fa-file-import"></span>Importer des monstres à partir
           de .json
         </button>
+        <div class="dropdown-divider"></div>
+        <button
+          type="button"
+          class="dropdown-item btn-confirm-export-vault-to-s3"
+        >
+          <span class="fas fa-upload"></span>Exporter le coffre-fort en .json
+          vers S3
+        </button>
+        <button
+          type="button"
+          class="dropdown-item btn-confirm-import-vault-from-s3"
+        >
+          <span class="fas fa-download"></span>Importer le coffre-fort depuis S3
+        </button>
       </div>
     </div>
     <a class="btn btn-primary" href="#/laboratory">
@@ -152,6 +166,74 @@
       </div>
     </div>
   </div>
+  <div id="modal-export-monsters-confirmation" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <span class="card-icon fas fa-file-import"></span>
+            Confirmation d'export vers S3
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p>Êtes-vous sur de vouloir exporter le contenu du coffre-fort vers S3
+            ?</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary btn-export-vault-to-s3"
+            data-dismiss="modal"
+          >
+            <span class="fas fa-check"></span>
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-import-monsters-confirmation" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <span class="card-icon fas fa-file-import"></span>
+            Confirmation d'import depuis S3
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p>Êtes-vous sur de vouloir importer le contenu du coffre-fort depuis
+            S3 ?</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary btn-import-vault-from-s3"
+            data-dismiss="modal"
+          >
+            <span class="fas fa-check"></span>
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="modal-import-monsters-failure" class="modal fade">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -171,6 +253,38 @@
         </div>
         <div class="modal-body text-center">
           <p>Ce fichier ne contient aucun enregistrement de monstre valide.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            <span class="fas fa-check"></span>
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-upload-vault-success" class="modal fade">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">
+            <span class="card-icon fas fa-upload"></span>
+            Export Réussi
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-center">
+          <p>Le coffre-fort a été importé avec succès vers S3
+            <a
+              href="https://monster-maker-v2.s3.ap-northeast-2.amazonaws.com/monster_vault.json"
+            >ici</a></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">
