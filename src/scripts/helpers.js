@@ -12,12 +12,12 @@ const Helpers = (function () {
     Handlebars.partials = Handlebars.templates;
 
     const savingThrowMap = {
-      str: "For",
-      dex: "Dex",
-      con: "Con",
-      int: "Int",
-      wis: "Sag",
-      cha: "Cha",
+      str: "FOR",
+      dex: "DEX",
+      con: "CON",
+      int: "INT",
+      wis: "SAG",
+      cha: "CHA",
     };
 
     // Helpers used by the blueprint form

@@ -186,7 +186,7 @@
   }
 
   .monster-abilities {
-    display: inline-grid;
+    display: grid;
     width: 100%;
     grid-template-columns: repeat(6, 1fr);
     text-align: center;
@@ -718,42 +718,14 @@
       }
     }
 
-    .monster-trait {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .monster-free-action {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .monster-bonus-action {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .monster-action {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .monster-reaction {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .monster-paragon-action {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .monster-legendary-action {
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-
-    .monster-lair-action {
+    .monster-trait
+      .monster-free-action
+      .monster-bonus-action
+      .monster-action
+      .monster-reaction
+      .monster-paragon-action
+      .monster-lair-action
+      .monster-legendary-action {
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -895,16 +867,12 @@
     }
 
     .monster-abilities {
-      //column-gap: 0.25em;
-      // margin-top: 0.5em;
       margin-bottom: 0.3em;
     }
 
     .monster-ability {
       background: rgb(131, 21, 23);
       color: white;
-      // padding: 0.4em 0;
-      // border-radius: 0.5em;
 
       .label {
         color: white;

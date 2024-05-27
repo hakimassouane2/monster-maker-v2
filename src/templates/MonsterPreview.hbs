@@ -26,6 +26,11 @@
 					<p><i class="fa-solid fa-crown"></i> {{fmtFormatRank monster.description.rank}} <span class="solo-only">vs {{monster.description.players}} </span> Niveau {{monster.description.level}}, {{fmtFormatRole monster.description.role}}</p>
 				</div>
 			{{/if}}
+			{{#unless display.quickstart}}
+				<div class="monster-quickstart">
+					<p><i class="fa-solid fa-crown"></i> Monstre Manuel, CR {{monster.challenge.rating}}</p>
+				</div>
+			{{/unless}}
 			<div class="monster-abilities">
 				<div class="monster-ability">
 					<span class="label">For {{monster.abilities.str.score}} </span>
@@ -149,7 +154,7 @@
 					<span>
 						{{{monster.challenge.rating}}}
 					</span>
-					{{#unless display.quickstart}}<span class="label">XP</span><span>{{fmtLocaleString monster.challenge.xp}} XP</span>{{/unless}}
+					{{#unless display.quickstart}}<span class="label">XP </span><span>{{fmtLocaleString monster.challenge.xp}} XP</span>{{/unless}}
 				</p>
 			{{/if}}
 			<hr/>
