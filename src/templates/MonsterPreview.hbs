@@ -75,6 +75,7 @@
 					<span class="label">Péril</span>
 					<span>{{divideRoundDown monster.hp.average 2}}</span>
 				</p>
+				{{#if display.quickstart}}
 				<p class="body-stats">
 					<span class="label"><i class="fa-solid fa-hand-fist"></i> ATK</span>
 					<span>{{fmtModifier monster.attack.bonus}}</span>
@@ -83,6 +84,7 @@
 					<span class="label">DMG</span>
 					<span>{{ monster.attack.damage}}</span>
 				</p>
+				{{/if}}
 				<hr style="background: #831517; border-width: 5px; display: block; margin-left: 0.5em; margin-right: 0.5em; width: auto; margin-top: 0.1em; margin-bottom: 0.1em;"/>
 				<p class="body-stats" style="margin-top: 0;">
 					<span class="label"><i class="fa-solid fa-bolt"></i> Vitesse</span>
