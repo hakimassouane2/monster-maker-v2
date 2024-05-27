@@ -308,7 +308,7 @@ const Helpers = (function () {
           let save = savingThrows.find((x) => x.ability == attribute);
           if (save) {
             output +=
-              savingThrowMap[save] +
+              savingThrowMap[save.ability] +
               " " +
               (save.modifier >= 0 ? "+" : "−") +
               Math.abs(save.modifier);
